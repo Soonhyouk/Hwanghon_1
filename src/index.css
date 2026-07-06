@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cinzel:wght@600;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif KR", Georgia, ui-serif, serif;
+  --font-mono: "Cinzel", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Custom colors and design elements for Twilight Server dark fantasy theme */
+  --color-background: #06030c;
+  --color-foreground: #ece8e1;
+  --color-primary: #c8952a;
+}
+
+/* Base custom resets for smooth experience */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-background);
+}
+
+/* Custom scrollbar styling for high polish */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06030c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 149, 42, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 149, 42, 0.4);
+}
