@@ -24,6 +24,8 @@ import {
   Send
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+// @ts-ignore
+import twilightLogo from "./assets/images/twilight_logo_1782668675367.jpg";
 
 // Types
 interface Notice {
@@ -281,7 +283,7 @@ export default function App() {
           <a href="#intro" className="flex items-center gap-3 group">
             <div className="w-9 h-9 rounded-full overflow-hidden shadow-lg shadow-black/40 transition-transform group-hover:scale-105 border border-[#c8952a]/30">
               <img
-                src="/src/assets/images/twilight_logo_1782668675367.jpg"
+                src={twilightLogo}
                 alt="황혼서버 Logo"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -859,11 +861,14 @@ export default function App() {
                 icon: <Send size={22} />,
                 color: "hover:border-sky-400",
                 bg: "rgba(0,136,204,0.03)",
-                accent: "text-sky-400"
+                accent: "text-sky-400",
+                url: "https://t.me/+gXAtzqiPDINhNzBi"
               },
             ].map((comm, i) => (
               <a
-                href="#community"
+                href={comm.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={i}
                 className={`rounded-xl border border-white/5 p-6 flex flex-col items-center text-center transition-all duration-300 relative overflow-hidden group hover:-translate-y-1 ${comm.color}`}
                 style={{ background: comm.bg }}
@@ -928,7 +933,7 @@ export default function App() {
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full overflow-hidden border border-[#c8952a]/30">
                 <img
-                  src="/src/assets/images/twilight_logo_1782668675367.jpg"
+                  src={twilightLogo}
                   alt="황혼서버 Logo"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -987,14 +992,14 @@ export default function App() {
               id="download-modal-card"
             >
               <div className="flex items-start justify-between gap-4 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
-                  <CheckCircle2 size={20} />
+                <div className="w-10 h-10 rounded-lg bg-[#c8952a]/10 flex items-center justify-center text-[#c8952a] shrink-0">
+                  <Calendar size={20} />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-base text-[#e8dfc8]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-                    다운로드 요청 성공
+                    클라이언트 다운로드 안내
                   </h3>
-                  <p className="text-xs text-white/40 mt-1">안전한 다운로드 게이트웨이가 작동되었습니다.</p>
+                  <p className="text-xs text-white/40 mt-1">황혼서버 클라이언트 배포 일정</p>
                 </div>
                 <button
                   onClick={() => setDownloadModalOpen(false)}
@@ -1006,37 +1011,26 @@ export default function App() {
               </div>
 
               <div className="space-y-4 text-xs text-white/70 leading-relaxed border-y border-white/5 py-4 my-4">
-                <p>
-                  선택하신 항목 <strong className="text-[#c8952a] font-black">{selectedDownloadLabel}</strong> 파일 전송을 준비 중입니다. 
-                  브라우저 보안으로 인해 다운로드가 차단될 경우, <span className="text-amber-400 font-bold">확인 및 계속 다운로드</span>를 눌러 진행해 주세요.
-                </p>
-                <div className="bg-red-500/5 border border-red-500/10 rounded-lg p-3 text-red-300">
-                  <p className="font-bold flex items-center gap-1.5"><Shield size={12} /> 윈도우 디펜더 오탐 알림 필독</p>
-                  <p className="mt-1 font-light opacity-90 text-[11px]">
-                    일부 런처 파일이 크랙 방지 모듈로 암호화되어 있어 윈도우 보안 프로그램에서 악성코드로 오진하여 자동 격리할 수 있습니다. 
-                    격리 해제 후, 안전 폴더에 등록하고 가동해주시기 바랍니다.
+                <div className="bg-[#c8952a]/5 border border-[#c8952a]/20 rounded-lg p-4 text-center">
+                  <p className="text-base font-black text-[#c8952a] mb-1">
+                    7월 22일-23일 배포 예정입니다
+                  </p>
+                  <p className="text-[11px] text-white/50 font-light">
+                    보다 안정적이고 쾌적한 게임 환경을 제공해 드리기 위해 최종 준비 중입니다.
                   </p>
                 </div>
+                <p className="text-[11px] text-white/40 font-light leading-normal">
+                  배포가 시작되는 즉시 공식 텔레그램 채널을 통해 다운로드 주소가 공지될 예정이오니, 텔레그램 채널에 참여하셔서 가장 신속하게 소식을 받아보세요.
+                </p>
               </div>
 
               <div className="flex gap-2 justify-end">
                 <button
                   onClick={() => setDownloadModalOpen(false)}
-                  className="px-4 py-2 text-xs font-bold text-white/60 hover:text-white hover:bg-white/5 rounded transition-all cursor-pointer"
-                  id="modal-cancel-btn"
-                >
-                  닫기
-                </button>
-                <button
-                  onClick={() => {
-                    setDownloadModalOpen(false);
-                    // Mock click down
-                    alert("다운로드 세션이 가동되었습니다. (브라우저 하단의 다운로드 항목을 참조해 주십시오.)");
-                  }}
-                  className="px-4 py-2 text-xs font-black bg-gradient-to-r from-[#c8952a] to-[#a07020] text-[#06030c] rounded hover:brightness-110 transition-all cursor-pointer"
+                  className="w-full px-4 py-2.5 text-xs font-black bg-gradient-to-r from-[#c8952a] to-[#a07020] text-[#06030c] rounded hover:brightness-110 transition-all cursor-pointer text-center"
                   id="modal-confirm-btn"
                 >
-                  지금 즉시 다운로드
+                  확인
                 </button>
               </div>
             </motion.div>
