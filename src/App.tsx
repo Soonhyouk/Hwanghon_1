@@ -146,9 +146,9 @@ const DOWNLOAD_LINKS = [
 ];
 
 const SERVER_STATS = [
-  { label: "경험치 배율", value: "x1.5", sub: "EXP RATE", desc: "지루함 없는 폭풍 성장" },
-  { label: "아이템 드랍", value: "x1.5", sub: "DROP RATE", desc: "득템의 손맛과 짜릿함" },
-  { label: "아데나 배율", value: "x1", sub: "GOLD RATE", desc: "넉넉하고 원활한 경제" },
+  { label: "경험치 배율", value: "x17", sub: "EXP RATE", desc: "지루함 없는 폭풍 성장" },
+  { label: "아이템 드랍", value: "x2", sub: "DROP RATE", desc: "득템의 손맛과 짜릿함" },
+  { label: "아데나 배율", value: "x3", sub: "GOLD RATE", desc: "넉넉하고 원활한 경제" },
   { label: "서버 시즌", value: "Season 1", sub: "TWILIGHT OPEN", desc: "매주 이벤트 예정" },
 ];
 
@@ -236,7 +236,7 @@ export default function App() {
 
   // Promo text copy function
   const promoText = `리니지 [황혼서버] 대오픈!
-◈ 경험치 1.5배 / 드랍 1.5배 / 아데나 1배 특화 배율!
+◈ 경험치 17배 / 드랍 2배 / 아데나 3배 특화 배율!
 ◈ 접속 즉시 스타터 장비 지급!
 ◈ 특정 던전 자동 사냥 시스템 탑재 (바쁜 직장인 안성맞춤)
 ◈ 전 직업 완벽 밸런스 실시간 조율 및 무소과금도 최고템 제작 및 획득 가능!
