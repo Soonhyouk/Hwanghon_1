@@ -141,8 +141,16 @@ const HUNTING_ZONES: HuntingZone[] = [
   },
 ];
 
+const CLIENT_DOWNLOAD_URL = "https://drive.google.com/file/d/16a326xwv7RNpYwoBQqyJd08dQ8Cxjlr_/view?usp=drive_link";
+
 const DOWNLOAD_LINKS = [
-  { label: "클라이언트 종합 다운로드", size: "2.3 GB", primary: true, speed: "최대 100MB/s" },
+  { 
+    label: "클라이언트 종합 다운로드", 
+    size: "2.3 GB", 
+    primary: true, 
+    speed: "구글 드라이브 (초고속)",
+    url: CLIENT_DOWNLOAD_URL
+  },
 ];
 
 const SERVER_STATS = [
@@ -235,13 +243,45 @@ export default function App() {
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text copy function
-  const promoText = `리니지 [황혼서버] 대오픈!
-◈ 경험치 17배 / 드랍 2배 / 아데나 3배 특화 배율!
-◈ 접속 즉시 스타터 장비 지급!
-◈ 특정 던전 자동 사냥 시스템 탑재 (바쁜 직장인 안성맞춤)
-◈ 전 직업 완벽 밸런스 실시간 조율 및 무소과금도 최고템 제작 및 획득 가능!
-◈ 보스코인으로 보스드랍템 구입 가능
-◈ 새로운 아이템 및 세트로 스펙업 가능`;
+  const promoText = `😈😈２．０　반하자　황혼서버😈😈７월２３일　목요일　19시 오대기ㅡ20시 오픈😈😈샤르나변신😈😈
+
+
+✡️ 빛과 어둠이 교차하는 순간, 진짜 전투가 시작된다. ✡️
+
+✔️✔️ 리니지 2.0의 감성은 그대로, 플레이어들이 아쉬워했던 부분은 개선하기 위해 노력했습니다. ✔️✔️
+
+⭕️⭕️ 원작의 분위기는 유지하면서 불편했던 요소는 편의 시스템으로 보완⭕️⭕️
+
+☑️☑️ 칼렉, 길렉 등 기존 2.0 서버에서 자주 발생했던 불편 사항 개선☑️☑️
+
+⭕️⭕️ 자동사냥 시스템 지원⭕️⭕️
+(손사냥이 더욱 높은 효율을 가질 수 있도록 설계)
+
+☑️☑️ 장기 운영을 목표로 하는 하자지향 서버☑️☑️
+단기간에 모든 것을 얻기보다,
+하루하루 성장하며 장비를 맞춰가는 재미를 추구합니다.
+
+☑️☑️시간과 노력만으로 10검 9셋 가능!!!! 노가다 만으로 가능!! ☑️☑️
+⭕️⭕️보스코인 시스템!! ⭕️⭕️
+⭕️⭕️보스를 잡으며 얻는 보스코인으로 원하는 템 구매 가능⭕️⭕️
+
+☑️☑️린클의 지루함과 식상함을 덜어내기 위해  신기하고 다양한 개별 아이템 및 세트 아이템들 대기중!! ☑️☑️
+
+⭕️⭕️ 아이템 가치가 쉽게 무너지지 않는 안정적인 성장 구조⭕️⭕️
+
+⭕️⭕️ 자유로운 유저 간 거래 지원⭕️⭕️
+(필요 시 운영진 중재 가능)
+
+☑️☑️ 샤르나 변신 뿐만 아니라 린클 변신 시스템 지원☑️☑️
+그 시절의 감성과 전투의 재미를 동시에 경험할 수 있습니다.
+
+⭕️⭕️ 플레이어들의 의견을 듣고, 더 많은 분들이 만족할 수 있는 방향으로 꾸준히 개선해 나가겠습니다.⭕️⭕️
+
+☑️☑️ 황혼서버만의 다양한 콘텐츠와 시스템을 지속적으로 업데이트합니다.☑️☑️
+
+텔레그램  :  https://t.me/+gXAtzqiPDINhNzBi
+
+홈페이지 :  https://twilighthwanghon.netlify.app/`;
   const handleCopyPromo = () => {
     navigator.clipboard.writeText(promoText);
     setCopied(true);
@@ -761,12 +801,19 @@ export default function App() {
               안전하고 확실한 다이렉트 드라이브 및 수동 패치 파일을 다운로드하십시오. 
               원활한 게임 접속을 위해 보안 프로그램 백신 가이드를 반드시 확인 부탁드립니다.
             </p>
+            <div className="mt-3.5 inline-flex items-center gap-2 bg-[#c8952a]/10 border border-[#c8952a]/30 rounded-lg px-4 py-2 text-xs text-[#c8952a] font-medium">
+              <Info size={14} className="shrink-0" />
+              <span>다운로드가 되지 않는 경우, 구글 로그인 후 시도해주세요.</span>
+            </div>
           </div>
 
           <div className="grid gap-3.5 mb-10" id="download-actions-list">
             {DOWNLOAD_LINKS.map((dl, i) => (
-              <button
+              <a
                 key={i}
+                href={dl.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => openDownloadModal(dl.label)}
                 className={`w-full flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl border transition-all hover:brightness-110 active:scale-[0.99] text-left group gap-4 cursor-pointer relative overflow-hidden ${
                   dl.primary
@@ -796,7 +843,7 @@ export default function App() {
                   </span>
                   <ChevronDown size={14} className="text-white/20 -rotate-90" />
                 </div>
-              </button>
+              </a>
             ))}
           </div>
 
@@ -893,8 +940,9 @@ export default function App() {
             서버 홍보 이벤트 참여
           </h2>
           <p className="text-xs sm:text-sm text-white/50 leading-relaxed mb-8 max-w-xl mx-auto">
-            아래의 홍보 문구를 복사하여 게임 커뮤니티, 블로그, 타 카페 등에 기재하여 주십시오. 
-            참여 인증 스크린샷을 카페에 남겨주시면 특별 홍보 보훈 보물상자(랜덤 희귀 상자)를 100% 무상 지급합니다.
+            아래의 홍보 문구를 복사하여 게임 커뮤니티 사이트에 각 홈페이지당 1개, 5군데에 기재하여 주십시오. 
+            홍보내용을 캡쳐, 스크린샷하여 텔레그램으로 보내주시면 확인 후 홍보보상상자를 하루 1개 지급합니다.
+            커뮤니티사이트 5개 홍보 -&gt; 홍보보상상자
           </p>
 
           <div className="bg-[#06030c] rounded-xl border border-[#c8952a]/20 p-5 text-left max-w-2xl mx-auto mb-6 relative group">
@@ -915,7 +963,7 @@ export default function App() {
                 </>
               )}
             </button>
-            <pre className="text-[11px] sm:text-xs text-white/60 font-mono leading-relaxed max-h-48 overflow-y-auto whitespace-pre-wrap pr-16 select-all font-light">
+            <pre className="text-[11px] sm:text-xs text-white/60 font-mono leading-relaxed max-h-72 overflow-y-auto whitespace-pre-wrap pr-16 select-all font-light">
               {promoText}
             </pre>
           </div>
@@ -1012,26 +1060,29 @@ export default function App() {
 
               <div className="space-y-4 text-xs text-white/70 leading-relaxed border-y border-white/5 py-4 my-4">
                 <div className="bg-[#c8952a]/5 border border-[#c8952a]/20 rounded-lg p-4 text-center">
-                  <p className="text-base font-black text-[#c8952a] mb-1">
-                    7월 22일-23일 배포 예정입니다
+                  <p className="text-sm font-black text-[#c8952a] mb-1">
+                    구글 드라이브 다운로드
                   </p>
-                  <p className="text-[11px] text-white/50 font-light">
-                    보다 안정적이고 쾌적한 게임 환경을 제공해 드리기 위해 최종 준비 중입니다.
+                  <p className="text-[11px] text-[#c8952a]/90 font-medium">
+                    ※ 다운로드가 되지 않는 경우, 구글 로그인 후 시도해주세요.
                   </p>
                 </div>
-                <p className="text-[11px] text-white/40 font-light leading-normal">
-                  배포가 시작되는 즉시 공식 텔레그램 채널을 통해 다운로드 주소가 공지될 예정이오니, 텔레그램 채널에 참여하셔서 가장 신속하게 소식을 받아보세요.
+                <p className="text-[11px] text-white/50 font-light leading-normal">
+                  아래 [지금 바로 다운로드] 버튼을 누르시면 구글 드라이브 다운로드 페이지로 바로 연결됩니다.
                 </p>
               </div>
 
               <div className="flex gap-2 justify-end">
-                <button
+                <a
+                  href={CLIENT_DOWNLOAD_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setDownloadModalOpen(false)}
-                  className="w-full px-4 py-2.5 text-xs font-black bg-gradient-to-r from-[#c8952a] to-[#a07020] text-[#06030c] rounded hover:brightness-110 transition-all cursor-pointer text-center"
+                  className="w-full px-4 py-2.5 text-xs font-black bg-gradient-to-r from-[#c8952a] to-[#a07020] text-[#06030c] rounded hover:brightness-110 transition-all cursor-pointer text-center block"
                   id="modal-confirm-btn"
                 >
-                  확인
-                </button>
+                  지금 바로 다운로드 (Google Drive)
+                </a>
               </div>
             </motion.div>
           </div>
