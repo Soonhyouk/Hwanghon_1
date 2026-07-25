@@ -243,8 +243,9 @@ export default function App() {
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text copy function
-  const promoText = `😈😈２．０　반하자　황혼서버😈😈７월２３일　목요일　19시 오대기ㅡ20시 오픈😈😈샤르나변신😈😈
+  const promoText = `✡️✡️２．０　반하자　황혼서버✡️✡️７월２３일오픈✡️노력과 시간으로 승부한다. ✡️✡️
 
+✔️✔️✔️✔️새로운 혈맹분들을 모십니다!!! ✔️✔️✔️✔️
 
 ✡️ 빛과 어둠이 교차하는 순간, 진짜 전투가 시작된다. ✡️
 
