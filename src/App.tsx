@@ -141,16 +141,8 @@ const HUNTING_ZONES: HuntingZone[] = [
   },
 ];
 
-const CLIENT_DOWNLOAD_URL = "https://drive.google.com/file/d/16a326xwv7RNpYwoBQqyJd08dQ8Cxjlr_/view?usp=drive_link";
-
 const DOWNLOAD_LINKS = [
-  { 
-    label: "클라이언트 종합 다운로드", 
-    size: "2.3 GB", 
-    primary: true, 
-    speed: "구글 드라이브 (초고속)",
-    url: CLIENT_DOWNLOAD_URL
-  },
+  { label: "클라이언트 종합 다운로드", size: "2.3 GB", primary: true, speed: "최대 100MB/s" },
 ];
 
 const SERVER_STATS = [
@@ -162,7 +154,7 @@ const SERVER_STATS = [
 
 const NOTICES: Notice[] = [
   {
-    date: "2026.06.28",
+    date: "2026.08.17",
     tag: "공지",
     title: "황혼서버 신규 오픈 예정",
     content: "클래식의 오리지널함과 새로운 아이템들의 조화를 완성시켰으니 쾌적하게 즐겨주시기 바랍니다."
@@ -803,17 +795,15 @@ export default function App() {
             </p>
             <div className="mt-3.5 inline-flex items-center gap-2 bg-[#c8952a]/10 border border-[#c8952a]/30 rounded-lg px-4 py-2 text-xs text-[#c8952a] font-medium">
               <Info size={14} className="shrink-0" />
-              <span>다운로드가 되지 않는 경우, 구글 로그인 후 시도해주세요.</span>
+              <span>8월 15일-16일 클라이언트 배포 예정입니다.</span>
             </div>
           </div>
 
           <div className="grid gap-3.5 mb-10" id="download-actions-list">
             {DOWNLOAD_LINKS.map((dl, i) => (
-              <a
+              <button
                 key={i}
-                href={dl.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                type="button"
                 onClick={() => openDownloadModal(dl.label)}
                 className={`w-full flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl border transition-all hover:brightness-110 active:scale-[0.99] text-left group gap-4 cursor-pointer relative overflow-hidden ${
                   dl.primary
@@ -843,7 +833,7 @@ export default function App() {
                   </span>
                   <ChevronDown size={14} className="text-white/20 -rotate-90" />
                 </div>
-              </a>
+              </button>
             ))}
           </div>
 
@@ -1060,29 +1050,27 @@ export default function App() {
 
               <div className="space-y-4 text-xs text-white/70 leading-relaxed border-y border-white/5 py-4 my-4">
                 <div className="bg-[#c8952a]/5 border border-[#c8952a]/20 rounded-lg p-4 text-center">
-                  <p className="text-sm font-black text-[#c8952a] mb-1">
-                    구글 드라이브 다운로드
+                  <p className="text-base font-black text-[#c8952a] mb-1">
+                    8월 15일-16일 배포 예정입니다
                   </p>
-                  <p className="text-[11px] text-[#c8952a]/90 font-medium">
-                    ※ 다운로드가 되지 않는 경우, 구글 로그인 후 시도해주세요.
+                  <p className="text-[11px] text-white/50 font-light">
+                    보다 안정적이고 쾌적한 게임 환경을 제공해 드리기 위해 최종 준비 중입니다.
                   </p>
                 </div>
-                <p className="text-[11px] text-white/50 font-light leading-normal">
-                  아래 [지금 바로 다운로드] 버튼을 누르시면 구글 드라이브 다운로드 페이지로 바로 연결됩니다.
+                <p className="text-[11px] text-white/40 font-light leading-normal">
+                  배포가 시작되는 즉시 공식 텔레그램 채널을 통해 다운로드 주소가 공지될 예정이오니, 텔레그램 채널에 참여하셔서 가장 신속하게 소식을 받아보세요.
                 </p>
               </div>
 
               <div className="flex gap-2 justify-end">
-                <a
-                  href={CLIENT_DOWNLOAD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
                   onClick={() => setDownloadModalOpen(false)}
-                  className="w-full px-4 py-2.5 text-xs font-black bg-gradient-to-r from-[#c8952a] to-[#a07020] text-[#06030c] rounded hover:brightness-110 transition-all cursor-pointer text-center block"
+                  className="w-full px-4 py-2.5 text-xs font-black bg-gradient-to-r from-[#c8952a] to-[#a07020] text-[#06030c] rounded hover:brightness-110 transition-all cursor-pointer text-center"
                   id="modal-confirm-btn"
                 >
-                  지금 바로 다운로드 (Google Drive)
-                </a>
+                  확인
+                </button>
               </div>
             </motion.div>
           </div>
