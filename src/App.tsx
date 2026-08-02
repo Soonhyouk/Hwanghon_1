@@ -156,8 +156,8 @@ const DOWNLOAD_LINKS = [
 const SERVER_STATS = [
   { label: "경험치 배율", value: "x17", sub: "EXP RATE", desc: "지루함 없는 폭풍 성장" },
   { label: "아이템 드랍", value: "x2", sub: "DROP RATE", desc: "득템의 손맛과 짜릿함" },
-  { label: "아데나 배율", value: "x3", sub: "GOLD RATE", desc: "넉넉하고 원활한 경제" },
-  { label: "서버 시즌", value: "Season 1", sub: "TWILIGHT OPEN", desc: "매주 이벤트 예정" },
+  { label: "아데나 배율", value: "x2", sub: "GOLD RATE", desc: "넉넉하고 원활한 경제" },
+  { label: "서버 시즌", value: "NEW SEASON", sub: "TWILIGHT OPEN", desc: "" },
 ];
 
 const NOTICES: Notice[] = [
@@ -437,7 +437,7 @@ export default function App() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#c8952a]/20 bg-[#c8952a]/5 text-xs font-semibold text-[#c8952a] mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
-              <span className="font-mono tracking-wide">7월23일 대오픈!</span>
+              <span className="font-mono tracking-wide">8월 17일 대오픈!</span>
             </motion.div>
 
             <motion.h1
@@ -516,7 +516,7 @@ export default function App() {
                   {stat.value}
                 </p>
                 <p className="text-xs font-semibold text-white/80">{stat.label}</p>
-                <p className="text-[10px] text-white/40 mt-1 leading-normal font-light">{stat.desc}</p>
+                {stat.desc ? <p className="text-[10px] text-white/40 mt-1 leading-normal font-light">{stat.desc}</p> : null}
               </div>
             ))}
           </motion.div>
