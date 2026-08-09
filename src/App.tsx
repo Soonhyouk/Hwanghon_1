@@ -929,11 +929,28 @@ export default function App() {
           <h2 className="text-xl sm:text-2xl font-black text-[#e8dfc8] mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>
             서버 홍보 이벤트 참여
           </h2>
-          <p className="text-xs sm:text-sm text-white/50 leading-relaxed mb-8 max-w-xl mx-auto">
-            아래의 홍보 문구를 복사하여 게임 커뮤니티 사이트에 각 홈페이지당 1개, 5군데에 기재하여 주십시오. 
-            홍보내용을 캡쳐, 스크린샷하여 텔레그램으로 보내주시면 확인 후 홍보보상상자를 하루 1개 지급합니다.
-            커뮤니티사이트 5개 홍보 -&gt; 홍보보상상자
-          </p>
+          <div className="text-xs sm:text-sm text-white/70 leading-relaxed mb-8 max-w-xl mx-auto space-y-4 text-center">
+            <p className="text-white/60">
+              아래의 홍보 문구를 복사하여 게임 커뮤니티 사이트에 각 홈페이지당 1개, 5군데에 기재하여 주십시오. 
+              홍보내용을 캡쳐, 스크린샷하여 텔레그램으로 보내주시면 확인 후 홍보보상상자를 하루 1개 지급합니다.
+            </p>
+            <p className="font-bold text-[#c8952a] text-xs sm:text-sm">
+              커뮤니티사이트 5개 홍보 → 홍보보상상자
+            </p>
+
+            <div className="bg-[#c8952a]/10 border border-[#c8952a]/30 rounded-xl p-4 text-left text-xs space-y-2.5 backdrop-blur-sm">
+              <p className="font-bold text-[#e8dfc8] text-xs sm:text-sm flex items-center gap-1.5">
+                <span>📢</span> 8월 15일 부터 홍보가 가능합니다.
+              </p>
+              <p className="text-white/80 leading-relaxed">
+                위에 텔레그램에 들어오셔서 <span className="text-[#c8952a] font-bold">Whoa(운영자)</span>로 개인텔레 주셔서 홍보 인증하시면 8월 17일 오픈 후에 홍보보상상자를 지급해 드립니다.
+              </p>
+              <div className="text-white/70 text-[11px] pt-2 border-t border-[#c8952a]/20 flex flex-col sm:flex-row sm:items-center gap-1">
+                <span className="font-semibold text-[#e8dfc8] shrink-0">🎁 (홍보보상상자 -</span>
+                <span className="text-white/80">경험치물약20퍼 2개, 픽시깃털 200개, 전강 5개, 자사5시간, 버프물약 5개)</span>
+              </div>
+            </div>
+          </div>
 
           <div className="bg-[#06030c] rounded-xl border border-[#c8952a]/20 p-5 text-left max-w-2xl mx-auto mb-6 relative group">
             <button
