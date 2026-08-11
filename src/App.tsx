@@ -127,17 +127,57 @@ const HUNTING_ZONES: HuntingZone[] = [
     color: "text-red-400",
     border: "border-red-950 hover:border-red-500/50",
     bgGlow: "rgba(239,68,68,0.03)",
-    drops: [" 경험치 "]
+    drops: ["경험치"]
+  },
+  {
+    name: "잊혀진섬",
+    level: "45 ~",
+    difficulty: "중상",
+    desc: "고대의주문서 노가다를 위한 사냥터",
+    color: "text-orange-400",
+    border: "border-orange-950 hover:border-orange-500/50",
+    bgGlow: "rgba(249,115,22,0.03)",
+    drops: ["고대의주문서", "가더", "잊혀진섬파편 등"]
   },
   {
     name: "기란던전",
-    level: "50 ~ ",
+    level: "50 ~",
     difficulty: "중상",
     desc: "엘릭서와 같은 필수템들 드랍",
     color: "text-fuchsia-400",
     border: "border-fuchsia-950 hover:border-fuchsia-500/50",
     bgGlow: "rgba(217,70,239,0.03)",
-    drops: ["퓨어엘릭서, 스탯부츠"]
+    drops: ["퓨어엘릭서", "스탯부츠"]
+  },
+  {
+    name: "오만의탑",
+    level: "52 ~",
+    difficulty: "상",
+    desc: "각층별 빨간색이름 보스, 흰색이름 보스 등장",
+    color: "text-rose-400",
+    border: "border-rose-950 hover:border-rose-500/50",
+    bgGlow: "rgba(244,63,94,0.03)",
+    drops: ["오만의탑 층별파편", "각종 장비 및 마법 등 (게임 내 드랍 확인)"]
+  },
+  {
+    name: "테베라스 던전",
+    level: "63 ~",
+    difficulty: "상",
+    desc: "시간던전, 레벨대비 쉬움, 테베상자 노가다 던전",
+    color: "text-purple-400",
+    border: "border-purple-950 hover:border-purple-500/50",
+    bgGlow: "rgba(168,85,247,0.03)",
+    drops: ["테베상자(악세류 드랍)"]
+  },
+  {
+    name: "칠흑의던전",
+    level: "65 ~",
+    difficulty: "최상",
+    desc: "시간던전, 몹이 굉장히 강함, 1마리도 잡기 힘듦",
+    color: "text-violet-400",
+    border: "border-violet-950 hover:border-violet-500/50",
+    bgGlow: "rgba(139,92,246,0.03)",
+    drops: ["기운잃은 최종마법 드랍"]
   },
 ];
 
@@ -244,6 +284,12 @@ export default function App() {
 
 ⭕️⭕️ 원작의 분위기는 유지하면서 불편했던 요소는 편의 시스템으로 보완⭕️⭕️
 
+☑️☑️시간과 노력만으로 10검 9셋 가능!!!! 노가다 만으로 가능!! ☑️☑️
+⭕️⭕️보스코인 시스템!! ⭕️⭕️
+일반보스들이 100퍼센트 보스코인 드랍!!
+보스몬스터 드랍테이블에 있는 템들 드랍확률 최소 1퍼센트!!!
+⭕️⭕️보스를 잡으며 얻는 보스코인으로 원하는 템 구매 가능⭕️⭕️
+
 ☑️☑️ 칼렉, 길렉 등 기존 2.0 서버에서 자주 발생했던 불편 사항 개선☑️☑️
 
 ⭕️⭕️ 자동사냥 시스템 지원⭕️⭕️
@@ -252,10 +298,6 @@ export default function App() {
 ☑️☑️ 장기 운영을 목표로 하는 반하자지향 서버☑️☑️
 단기간에 모든 것을 얻기보다,
 하루하루 성장하며 장비를 맞춰가는 재미를 추구합니다.
-
-☑️☑️시간과 노력만으로 10검 9셋 가능!!!! 노가다 만으로 가능!! ☑️☑️
-⭕️⭕️보스코인 시스템!! ⭕️⭕️
-⭕️⭕️보스를 잡으며 얻는 보스코인으로 원하는 템 구매 가능⭕️⭕️
 
 ☑️☑️린클의 지루함과 식상함을 덜어내기 위해  신기하고 다양한 개별 아이템 및 세트 아이템들 대기중!! ☑️☑️
 
