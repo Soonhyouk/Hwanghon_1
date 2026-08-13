@@ -21,7 +21,8 @@ import {
   Calendar,
   Sparkles,
   Volume2,
-  Send
+  Send,
+  Coins
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 // @ts-ignore
@@ -57,6 +58,12 @@ const NAV_LINKS = [
 
 const FEATURES = [
   {
+    icon: <Coins size={24} />,
+    title: "보스코인 시스템",
+    desc: "일반 보스 100퍼센트 보스코인 드랍\n(보스코인 상점에서 상위템 구입 가능)",
+    badge: "시그니처"
+  },
+  {
     icon: <Zap size={24} />,
     title: "즉시 사냥 가능",
     desc: "접속 즉시 스타터 장비와 소비 아이템 지급. 오대기 후 최고 속도로 전장 합류.",
@@ -77,7 +84,7 @@ const FEATURES = [
   {
     icon: <Map size={24} />,
     title: "특화 던전 분리",
-    desc: "던전별 아이템 드랍 분리.",
+    desc: "던전별 초반 아이템 드랍\n(상아탑6층 - 무기, 얼음던전 - 방어구)",
     badge: "컨텐츠"
   },
   {
@@ -275,7 +282,7 @@ export default function App() {
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text copy function
-  const promoText = `⭕️⭕️２．０　반하자　황혼서버⭕️⭕️8월 17일　월요일　19시 오대기ㅡ20시 오픈⭕️⭕️샤르나변신⭕️⭕️
+  const promoText = `⭕️⭕️２．０　반하자　황혼서버⭕️⭕️8월 17일　월요일　19시 오대기ㅡ20시 오픈⭕️⭕️오대기때만 샤르나주문서 지급⭕️⭕️
 
 
 ✡️ 빛과 어둠이 교차하는 순간, 진짜 전투가 시작된다. ✡️
@@ -684,7 +691,7 @@ export default function App() {
                 <h3 className="font-bold text-sm text-[#e8dfc8] mb-2.5" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                   {feat.title}
                 </h3>
-                <p className="text-xs text-white/50 leading-relaxed group-hover:text-white/70 transition-colors">
+                <p className="text-xs text-white/50 leading-relaxed group-hover:text-white/70 transition-colors whitespace-pre-line">
                   {feat.desc}
                 </p>
               </div>
