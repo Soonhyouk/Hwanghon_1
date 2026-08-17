@@ -189,7 +189,13 @@ const HUNTING_ZONES: HuntingZone[] = [
 ];
 
 const DOWNLOAD_LINKS = [
-  { label: "클라이언트 종합 다운로드", size: "2.3 GB", primary: true, speed: "최대 100MB/s" },
+  {
+    label: "클라이언트 종합 다운로드 (구글 드라이브)",
+    size: "2.3 GB",
+    primary: true,
+    speed: "최대 100MB/s (초고속)",
+    url: "https://drive.google.com/file/d/1YZyu1zgviOMWDemhDXr9D-tsG8lSMDBm/view?usp=drive_link"
+  },
 ];
 
 const SERVER_STATS = [
@@ -224,10 +230,6 @@ export default function App() {
   // Live simulation state
   const [onlinePlayers, setOnlinePlayers] = useState(384);
   const [activeFightsCount, setActiveFightsCount] = useState(148);
-
-  // Download guide modal state
-  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
-  const [selectedDownloadLabel, setSelectedDownloadLabel] = useState("");
 
   // Simulated player fluctuation effect
   useEffect(() => {
@@ -311,7 +313,6 @@ export default function App() {
 ⭕️⭕️ 아이템 가치가 쉽게 무너지지 않는 안정적인 성장 구조⭕️⭕️
 
 ⭕️⭕️ 자유로운 유저 간 거래 지원⭕️⭕️
-(필요 시 운영진 중재 가능)
 
 ☑️☑️ 샤르나 변신 뿐만 아니라 린클 변신 시스템 지원☑️☑️
 그 시절의 감성과 전투의 재미를 동시에 경험할 수 있습니다.
@@ -327,11 +328,6 @@ export default function App() {
     navigator.clipboard.writeText(promoText);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const openDownloadModal = (label: string) => {
-    setSelectedDownloadLabel(label);
-    setDownloadModalOpen(true);
   };
 
   return (
@@ -842,18 +838,19 @@ export default function App() {
               안전하고 확실한 다이렉트 드라이브 및 수동 패치 파일을 다운로드하십시오. 
               원활한 게임 접속을 위해 보안 프로그램 백신 가이드를 반드시 확인 부탁드립니다.
             </p>
-            <div className="mt-3.5 inline-flex items-center gap-2 bg-[#c8952a]/10 border border-[#c8952a]/30 rounded-lg px-4 py-2 text-xs text-[#c8952a] font-medium">
-              <Info size={14} className="shrink-0" />
-              <span>8월 15일-16일 클라이언트 배포 예정입니다.</span>
+            <div className="mt-3.5 inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-lg px-4 py-2 text-xs text-emerald-400 font-medium">
+              <Download size={14} className="shrink-0" />
+              <span>클라이언트 배포 완료! 구글 드라이브 링크를 통해 즉시 다운로드하실 수 있습니다.</span>
             </div>
           </div>
 
           <div className="grid gap-3.5 mb-10" id="download-actions-list">
             {DOWNLOAD_LINKS.map((dl, i) => (
-              <button
+              <a
                 key={i}
-                type="button"
-                onClick={() => openDownloadModal(dl.label)}
+                href={dl.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`w-full flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl border transition-all hover:brightness-110 active:scale-[0.99] text-left group gap-4 cursor-pointer relative overflow-hidden ${
                   dl.primary
                     ? "bg-gradient-to-r from-[#c8952a]/15 via-[#a07020]/5 to-[#06030c] border-[#c8952a]/40 text-[#c8952a]"
@@ -877,12 +874,12 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 relative z-10 self-end sm:self-center">
-                  <span className="text-xs font-mono font-bold text-white/40 bg-white/5 px-2.5 py-1 rounded">
-                    {dl.size}
+                  <span className="text-xs font-mono font-bold text-[#c8952a] bg-[#c8952a]/10 border border-[#c8952a]/30 px-3 py-1 rounded">
+                    {dl.size} 다운로드 ↗
                   </span>
-                  <ChevronDown size={14} className="text-white/20 -rotate-90" />
+                  <ChevronDown size={14} className="text-[#c8952a] -rotate-90 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </button>
+              </a>
             ))}
           </div>
 
@@ -988,11 +985,8 @@ export default function App() {
             </p>
 
             <div className="bg-[#c8952a]/10 border border-[#c8952a]/30 rounded-xl p-4 text-left text-xs space-y-2.5 backdrop-blur-sm">
-              <p className="font-bold text-[#e8dfc8] text-xs sm:text-sm flex items-center gap-1.5">
-                <span>📢</span> 8월 15일 부터 홍보가 가능합니다.
-              </p>
               <p className="text-white/80 leading-relaxed">
-                위에 텔레그램에 들어오셔서 <span className="text-[#c8952a] font-bold">Whoa(운영자)</span>로 개인텔레 주셔서 홍보 인증하시면 8월 17일 오픈 후에 홍보보상상자를 지급해 드립니다.
+                하루에 사이트 5곳에 홍보하시고 운영자에게 개인텔레로 스크린샷을 보내주시면 홍보보상상자를 지급해드립니다.
               </p>
               <div className="text-white/70 text-[11px] pt-2 border-t border-[#c8952a]/20 flex flex-col sm:flex-row sm:items-center gap-1">
                 <span className="font-semibold text-[#e8dfc8] shrink-0">🎁 (홍보보상상자 -</span>
@@ -1073,75 +1067,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-
-      {/* ─── DOWNLOAD GUIDE MODAL ─── */}
-      <AnimatePresence>
-        {downloadModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Modal Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-              onClick={() => setDownloadModalOpen(false)}
-            />
-            
-            {/* Modal Content Card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              className="bg-[#0e0a1b] border border-[#c8952a]/30 rounded-xl max-w-md w-full p-6 relative z-10 shadow-2xl text-left"
-              id="download-modal-card"
-            >
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-[#c8952a]/10 flex items-center justify-center text-[#c8952a] shrink-0">
-                  <Calendar size={20} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-base text-[#e8dfc8]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-                    클라이언트 다운로드 안내
-                  </h3>
-                  <p className="text-xs text-white/40 mt-1">황혼서버 클라이언트 배포 일정</p>
-                </div>
-                <button
-                  onClick={() => setDownloadModalOpen(false)}
-                  className="text-white/40 hover:text-white px-2 py-1 rounded hover:bg-white/5 text-xs font-mono"
-                  id="close-modal-btn"
-                >
-                  ESC
-                </button>
-              </div>
-
-              <div className="space-y-4 text-xs text-white/70 leading-relaxed border-y border-white/5 py-4 my-4">
-                <div className="bg-[#c8952a]/5 border border-[#c8952a]/20 rounded-lg p-4 text-center">
-                  <p className="text-base font-black text-[#c8952a] mb-1">
-                    8월 15일-16일 배포 예정입니다
-                  </p>
-                  <p className="text-[11px] text-white/50 font-light">
-                    보다 안정적이고 쾌적한 게임 환경을 제공해 드리기 위해 최종 준비 중입니다.
-                  </p>
-                </div>
-                <p className="text-[11px] text-white/40 font-light leading-normal">
-                  배포가 시작되는 즉시 공식 텔레그램 채널을 통해 다운로드 주소가 공지될 예정이오니, 텔레그램 채널에 참여하셔서 가장 신속하게 소식을 받아보세요.
-                </p>
-              </div>
-
-              <div className="flex gap-2 justify-end">
-                <button
-                  type="button"
-                  onClick={() => setDownloadModalOpen(false)}
-                  className="w-full px-4 py-2.5 text-xs font-black bg-gradient-to-r from-[#c8952a] to-[#a07020] text-[#06030c] rounded hover:brightness-110 transition-all cursor-pointer text-center"
-                  id="modal-confirm-btn"
-                >
-                  확인
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
