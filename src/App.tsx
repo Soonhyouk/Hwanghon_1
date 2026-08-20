@@ -44,7 +44,6 @@ interface HuntingZone {
   color: string;
   border: string;
   bgGlow: string;
-  drops: string[];
 }
 
 const NAV_LINKS = [
@@ -103,8 +102,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "놀, 라이칸스로프 등을 위주로 사냥, 장비가 된다면 오우거까지",
     color: "text-emerald-400",
     border: "border-emerald-950 hover:border-emerald-500/50",
-    bgGlow: "rgba(16,185,129,0.03)",
-    drops: ["무기마법주문서", "갑옷마법주문서"]
+    bgGlow: "rgba(16,185,129,0.03)"
   },
   {
     name: "엘모어의 밭",
@@ -113,8 +111,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "본격적인 모험이 시작, 엘모어들을 사냥하며 필수템들을 득템하세.",
     color: "text-lime-400",
     border: "border-lime-950 hover:border-lime-500/50",
-    bgGlow: "rgba(132,204,22,0.03)",
-    drops: ["대검", "마나의지팡이", "쇼크 스턴"]
+    bgGlow: "rgba(132,204,22,0.03)"
   },
   {
     name: "용의 계곡",
@@ -123,8 +120,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "가장 인기가 많았던 사냥터.",
     color: "text-amber-400",
     border: "border-amber-950 hover:border-amber-500/50",
-    bgGlow: "rgba(245,158,11,0.03)",
-    drops: ["오우거 - 오우거의피, 오우거의벨트"]
+    bgGlow: "rgba(245,158,11,0.03)"
   },
   {
     name: "버려진 땅",
@@ -133,8 +129,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "경험치를 위한 필수 사냥터.",
     color: "text-red-400",
     border: "border-red-950 hover:border-red-500/50",
-    bgGlow: "rgba(239,68,68,0.03)",
-    drops: ["경험치"]
+    bgGlow: "rgba(239,68,68,0.03)"
   },
   {
     name: "잊혀진섬",
@@ -143,8 +138,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "고대의주문서 노가다를 위한 사냥터",
     color: "text-orange-400",
     border: "border-orange-950 hover:border-orange-500/50",
-    bgGlow: "rgba(249,115,22,0.03)",
-    drops: ["고대의주문서", "가더", "잊혀진섬파편 등"]
+    bgGlow: "rgba(249,115,22,0.03)"
   },
   {
     name: "기란던전",
@@ -153,8 +147,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "엘릭서와 같은 필수템들 드랍",
     color: "text-fuchsia-400",
     border: "border-fuchsia-950 hover:border-fuchsia-500/50",
-    bgGlow: "rgba(217,70,239,0.03)",
-    drops: ["퓨어엘릭서", "스탯부츠"]
+    bgGlow: "rgba(217,70,239,0.03)"
   },
   {
     name: "오만의탑",
@@ -163,8 +156,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "각층별 빨간색이름 보스, 흰색이름 보스 등장",
     color: "text-rose-400",
     border: "border-rose-950 hover:border-rose-500/50",
-    bgGlow: "rgba(244,63,94,0.03)",
-    drops: ["오만의탑 층별파편", "각종 장비 및 마법 등 (게임 내 드랍 확인)"]
+    bgGlow: "rgba(244,63,94,0.03)"
   },
   {
     name: "테베라스 던전",
@@ -173,8 +165,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "시간던전, 레벨대비 쉬움, 테베상자 노가다 던전",
     color: "text-purple-400",
     border: "border-purple-950 hover:border-purple-500/50",
-    bgGlow: "rgba(168,85,247,0.03)",
-    drops: ["테베상자(악세류 드랍)"]
+    bgGlow: "rgba(168,85,247,0.03)"
   },
   {
     name: "칠흑의던전",
@@ -183,34 +174,33 @@ const HUNTING_ZONES: HuntingZone[] = [
     desc: "시간던전, 몹이 굉장히 강함, 1마리도 잡기 힘듦",
     color: "text-violet-400",
     border: "border-violet-950 hover:border-violet-500/50",
-    bgGlow: "rgba(139,92,246,0.03)",
-    drops: ["기운잃은 최종마법 드랍"]
+    bgGlow: "rgba(139,92,246,0.03)"
   },
 ];
 
 const DOWNLOAD_LINKS = [
   {
-    label: "클라이언트 종합 다운로드 (구글 드라이브)",
+    label: "클라이언트 종합 다운로드",
     size: "2.3 GB",
     primary: true,
-    speed: "최대 100MB/s (초고속)",
-    url: "https://drive.google.com/file/d/1YZyu1zgviOMWDemhDXr9D-tsG8lSMDBm/view?usp=drive_link"
+    speed: "최대 100MB/s",
+    availability: "8월 31~9월1일 다운로드 가능"
   },
 ];
 
 const SERVER_STATS = [
-  { label: "경험치 배율", value: "x17", sub: "EXP RATE", desc: "지루함 없는 폭풍 성장" },
-  { label: "아이템 드랍", value: "x2", sub: "DROP RATE", desc: "득템의 손맛과 짜릿함" },
-  { label: "아데나 배율", value: "x2", sub: "GOLD RATE", desc: "넉넉하고 원활한 경제" },
-  { label: "서버 시즌", value: "NEW SEASON", sub: "TWILIGHT OPEN", desc: "" },
+  { label: "경험치 배율", value: "x10", sub: "EXP RATE", desc: "안정적인 성장 밸런스" },
+  { label: "아이템 드랍", value: "x1", sub: "DROP RATE", desc: "득템의 손맛과 가치 보존" },
+  { label: "아데나 배율", value: "x1", sub: "GOLD RATE", desc: "탄탄하고 공정한 경제" },
+  { label: "서버 시즌", value: "NEW\n컨셉", sub: "새로운 출발", desc: "" },
 ];
 
 const NOTICES: Notice[] = [
   {
-    date: "2026.08.17",
+    date: "2026.09.01",
     tag: "공지",
-    title: "황혼서버 신규 오픈 예정",
-    content: "클래식의 오리지널함과 새로운 아이템들의 조화를 완성시켰으니 쾌적하게 즐겨주시기 바랍니다."
+    title: "황혼서버 9월 1일(화) 새로운 컨셉 오픈 안내",
+    content: "9월 1일 화요일 새로운 컨셉으로 돌아옵니다! 19시 오대기, 20시 정식 오픈으로 찾아뵙겠습니다."
   },
 ];
 
@@ -277,17 +267,19 @@ export default function App() {
   const filteredZones = useMemo(() => {
     return HUNTING_ZONES.filter((z) => {
       const matchesSearch = z.name.toLowerCase().includes(zoneSearch.toLowerCase()) || 
-                            z.drops.some(d => d.toLowerCase().includes(zoneSearch.toLowerCase()));
+                            z.desc.toLowerCase().includes(zoneSearch.toLowerCase());
       const matchesDiff = zoneDiffFilter === "전체" || z.difficulty === zoneDiffFilter;
       return matchesSearch && matchesDiff;
     });
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text copy function
-  const promoText = `⭕️⭕️２．０　반하자　황혼서버⭕️⭕️8월 17일　월요일　19시 오대기ㅡ20시 오픈⭕️⭕️오대기때만 샤르나주문서 지급⭕️⭕️
+  const promoText = `⭕️⭕️２．０　반하자　황혼서버⭕️⭕️9월1일　화요일　새로운 컨샙으로 돌아옵니다 19시 오대기 20시 오픈⭕️⭕️⭕️⭕️
 
 
 ✡️ 빛과 어둠이 교차하는 순간, 진짜 전투가 시작된다. ✡️
+
+⭕️⭕️시간과 끈기만이 살길이다!!! ⭕️⭕️
 
 ✔️✔️ 리니지 2.0의 감성은 그대로, 플레이어들이 아쉬워했던 부분은 개선하기 위해 노력했습니다. ✔️✔️
 
@@ -474,19 +466,19 @@ export default function App() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#c8952a]/20 bg-[#c8952a]/5 text-xs font-semibold text-[#c8952a] mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
-              <span className="font-mono tracking-wide">8월 17일 대오픈!</span>
+              <span className="font-mono tracking-wide">9월 1일 화요일 대오픈!</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 text-[#e8dfc8]"
+              className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.2] mb-6 text-[#e8dfc8]"
               style={{ fontFamily: "'Noto Serif KR', serif" }}
             >
-              황혼의 세계에서<br />
+              황혼서버 하자 지향,<br />
               <span className="bg-gradient-to-r from-[#c8952a] via-[#e8dfc8] to-[#9c6e14] bg-clip-text text-transparent">
-                전설을 새기다
+                노력과 시간이 미래를 바꾼다.
               </span>
             </motion.h1>
 
@@ -512,8 +504,8 @@ export default function App() {
                 className="flex items-center justify-center gap-2.5 px-7 py-4 font-bold text-sm rounded bg-gradient-to-r from-[#c8952a] to-[#a07020] text-[#06030c] hover:brightness-110 transition-all shadow-xl shadow-amber-950/20 active:scale-95"
                 id="hero-download-action"
               >
-                <Download size={16} />
-                초고속 클라이언트 다운로드
+                <Calendar size={16} />
+                8월 31~9월1일 다운로드 오픈
               </a>
               <a
                 href="#zones"
@@ -521,7 +513,7 @@ export default function App() {
                 id="hero-zones-action"
               >
                 <Map size={16} />
-                사냥터 정보 및 드랍률
+                사냥터 정보 안내
               </a>
             </motion.div>
           </div>
@@ -547,7 +539,7 @@ export default function App() {
                 </span>
                 <p className="text-xs font-mono tracking-widest text-[#c8952a] uppercase mb-1">{stat.sub}</p>
                 <p
-                  className="text-4xl font-extrabold text-[#e8dfc8] my-2 tracking-tight"
+                  className="text-3xl sm:text-4xl font-extrabold text-[#e8dfc8] my-2 tracking-tight whitespace-pre-line leading-tight min-h-[44px] flex items-center justify-center"
                   style={{ fontFamily: "'Cinzel', serif" }}
                 >
                   {stat.value}
@@ -702,11 +694,11 @@ export default function App() {
           <div className="text-center mb-16">
             <p className="text-xs tracking-widest text-[#c8952a] font-mono uppercase mb-2">Tactical Hunting ground</p>
             <h2 className="text-3xl sm:text-4xl font-black text-[#e8dfc8]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-              실시간 사냥터 & 드롭 가이드
+              실시간 사냥터 가이드
             </h2>
             <div className="mt-4 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-[#c8952a] to-transparent" />
             <p className="text-white/50 text-sm mt-4 max-w-lg mx-auto">
-              자신의 레벨과 장비에 알맞은 구역을 선택해 진입하십시오. 위험도가 높을수록 떨어지는 혜택도 커집니다.
+              자신의 레벨과 장비에 알맞은 구역을 선택해 진입하십시오. 위험도가 높을수록 더 높은 성장과 도전의 재미를 제공합니다.
             </p>
           </div>
 
@@ -719,7 +711,7 @@ export default function App() {
               </span>
               <input
                 type="text"
-                placeholder="사냥터 이름 또는 드랍 아이템 검색..."
+                placeholder="사냥터 이름 또는 설명 검색..."
                 className="w-full bg-white/5 text-xs text-white placeholder-white/30 pl-9 pr-4 py-2.5 rounded-lg border border-white/5 focus:outline-none focus:border-[#c8952a]/50 transition-colors"
                 value={zoneSearch}
                 onChange={(e) => setZoneSearch(e.target.value)}
@@ -792,23 +784,9 @@ export default function App() {
                         </span>
                       </div>
 
-                      <p className="text-xs text-white/60 leading-relaxed mb-6 font-light">
+                      <p className="text-xs text-white/70 leading-relaxed font-light">
                         {zone.desc}
                       </p>
-                    </div>
-
-                    <div className="pt-4 border-t border-white/5 space-y-2.5">
-                      <p className="text-[10px] font-bold tracking-wider text-[#c8952a] uppercase">주요 획득 전리품</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {zone.drops.map((drop, dropIndex) => (
-                          <span
-                            key={dropIndex}
-                            className="text-[10px] bg-white/5 hover:bg-white/10 text-white/80 px-2 py-1 rounded border border-white/5 transition-colors"
-                          >
-                            💎 {drop}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </motion.div>
                 );
@@ -829,57 +807,51 @@ export default function App() {
       <section id="download" className="py-24 border-y border-white/5 bg-[#0a0614] relative z-10" md-id="download-section">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-widest text-[#c8952a] font-mono uppercase mb-2">Instant Connection</p>
+            <p className="text-xs tracking-widest text-[#c8952a] font-mono uppercase mb-2">Client Download</p>
             <h2 className="text-3xl sm:text-4xl font-black text-[#e8dfc8]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-              쉽고 빠른 다운로드
+              클라이언트 다운로드 안내
             </h2>
             <div className="mt-4 mx-auto w-16 h-0.5 bg-gradient-to-r from-transparent via-[#c8952a] to-transparent" />
             <p className="text-white/50 text-sm mt-4">
-              안전하고 확실한 다이렉트 드라이브 및 수동 패치 파일을 다운로드하십시오. 
-              원활한 게임 접속을 위해 보안 프로그램 백신 가이드를 반드시 확인 부탁드립니다.
+              안전하고 확실한 클라이언트 파일을 배포 준비 중입니다. 
+              원활한 게임 접속을 위해 보안 프로그램 백신 가이드를 사전에 확인 부탁드립니다.
             </p>
-            <div className="mt-3.5 inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-lg px-4 py-2 text-xs text-emerald-400 font-medium">
-              <Download size={14} className="shrink-0" />
-              <span>클라이언트 배포 완료! 구글 드라이브 링크를 통해 즉시 다운로드하실 수 있습니다.</span>
+            <div className="mt-4 inline-flex items-center gap-2 bg-[#c8952a]/15 border border-[#c8952a]/40 rounded-lg px-4 py-2 text-xs text-[#e8dfc8] font-bold shadow-lg">
+              <Calendar size={14} className="shrink-0 text-[#c8952a]" />
+              <span>8월 31~9월1일 다운로드 가능</span>
             </div>
           </div>
 
           <div className="grid gap-3.5 mb-10" id="download-actions-list">
             {DOWNLOAD_LINKS.map((dl, i) => (
-              <a
+              <div
                 key={i}
-                href={dl.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-full flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl border transition-all hover:brightness-110 active:scale-[0.99] text-left group gap-4 cursor-pointer relative overflow-hidden ${
+                className={`w-full flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-xl border transition-all text-left group gap-4 relative overflow-hidden ${
                   dl.primary
                     ? "bg-gradient-to-r from-[#c8952a]/15 via-[#a07020]/5 to-[#06030c] border-[#c8952a]/40 text-[#c8952a]"
-                    : "bg-[#0f0a1b] border-white/5 hover:border-[#c8952a]/20 text-white/80"
+                    : "bg-[#0f0a1b] border-white/5 text-white/80"
                 }`}
                 id={`download-link-btn-${i}`}
               >
-                {/* Accent glow on hover */}
-                <div className="absolute inset-0 bg-white/2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="flex items-center gap-4 relative z-10">
                   <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
                     dl.primary ? "bg-[#c8952a]/20" : "bg-white/5 text-white/40"
                   }`}>
-                    <Download size={18} className={dl.primary ? "text-[#c8952a]" : ""} />
+                    <Calendar size={18} className={dl.primary ? "text-[#c8952a]" : ""} />
                   </div>
                   <div>
-                    <span className="font-bold text-sm text-white/95 block group-hover:text-[#c8952a] transition-colors">
+                    <span className="font-bold text-sm text-white/95 block">
                       {dl.label}
                     </span>
-                    <span className="text-[10px] text-white/40 block mt-0.5 font-mono">다운로드 속도: {dl.speed}</span>
+                    <span className="text-[11px] text-[#c8952a] block mt-0.5 font-mono">다운로드 일정: {dl.availability}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 relative z-10 self-end sm:self-center">
-                  <span className="text-xs font-mono font-bold text-[#c8952a] bg-[#c8952a]/10 border border-[#c8952a]/30 px-3 py-1 rounded">
-                    {dl.size} 다운로드 ↗
+                  <span className="text-xs font-bold text-[#c8952a] bg-[#c8952a]/10 border border-[#c8952a]/30 px-3.5 py-1.5 rounded-lg">
+                    8월 31~9월1일 다운로드 가능
                   </span>
-                  <ChevronDown size={14} className="text-[#c8952a] -rotate-90 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </a>
+              </div>
             ))}
           </div>
 
