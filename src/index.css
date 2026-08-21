@@ -6,16 +6,16 @@
   --font-serif: "Noto Serif KR", Georgia, ui-serif, serif;
   --font-mono: "Cinzel", ui-monospace, SFMono-Regular, monospace;
   
-  /* Custom colors and design elements for Twilight Server dark fantasy theme */
-  --color-background: #06030c;
-  --color-foreground: #ece8e1;
-  --color-primary: #c8952a;
+  /* Custom colors and design elements for Bright Luminous Fantasy theme */
+  --color-background: #0d091a;
+  --color-foreground: #f8f6f0;
+  --color-primary: #e6b94d;
 }
 
 /* Base custom resets for smooth experience */
 html {
   scroll-behavior: smooth;
-  background-color: var(--color-background);
+  background-color: #0d091a;
 }
 
 /* Custom scrollbar styling for high polish */
@@ -24,14 +24,32 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #06030c;
+  background: #0d091a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(200, 149, 42, 0.2);
+  background: rgba(230, 185, 77, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(200, 149, 42, 0.4);
+  background: rgba(230, 185, 77, 0.5);
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+@keyframes shimmerGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
+}
+
+.animate-shimmer-glow {
+  animation: shimmerGlow 4s ease-in-out infinite;
 }
