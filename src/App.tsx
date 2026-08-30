@@ -227,13 +227,31 @@ const HUNTING_ZONES: HuntingZone[] = [
     bgGlow: "rgba(245,158,11,0.06)"
   },
   {
+    name: "악마왕의 영토",
+    level: "40 ~",
+    difficulty: "중",
+    desc: "스탯티셔츠 파밍 던전, 중급자들의 필수 사냥터",
+    color: "text-rose-300",
+    border: "border-rose-500/30 hover:border-rose-400/60",
+    bgGlow: "rgba(244,63,94,0.06)"
+  },
+  {
+    name: "정령의 무덤",
+    level: "렙제없음",
+    difficulty: "중상",
+    desc: "스탯반지 파밍 던전, 레벨 제한 없이 입장 가능한 기회의 땅",
+    color: "text-emerald-300",
+    border: "border-emerald-500/30 hover:border-emerald-400/60",
+    bgGlow: "rgba(16,185,129,0.06)"
+  },
+  {
     name: "버려진 땅",
     level: "45 ~ 52",
     difficulty: "중",
     desc: "경험치를 위한 필수 사냥터.",
-    color: "text-rose-300",
-    border: "border-rose-500/30 hover:border-rose-400/60",
-    bgGlow: "rgba(244,63,94,0.06)"
+    color: "text-amber-300",
+    border: "border-amber-500/30 hover:border-amber-400/60",
+    bgGlow: "rgba(245,158,11,0.06)"
   },
   {
     name: "잊혀진섬",
@@ -264,7 +282,7 @@ const HUNTING_ZONES: HuntingZone[] = [
   },
   {
     name: "테베라스 던전",
-    level: "63 ~",
+    level: "52 ~",
     difficulty: "상",
     desc: "시간던전, 레벨대비 쉬움, 테베상자 노가다 던전",
     color: "text-purple-300",
@@ -273,7 +291,7 @@ const HUNTING_ZONES: HuntingZone[] = [
   },
   {
     name: "칠흑의던전",
-    level: "65 ~",
+    level: "52 ~",
     difficulty: "최상",
     desc: "시간던전, 몹이 굉장히 강함, 1마리도 잡기 힘듦",
     color: "text-violet-300",
@@ -284,11 +302,12 @@ const HUNTING_ZONES: HuntingZone[] = [
 
 const DOWNLOAD_LINKS = [
   {
-    label: "클라이언트 종합 다운로드",
+    label: "클라이언트 종합 다운로드 (구글 드라이브)",
+    url: "https://drive.google.com/file/d/12sGhUPQv73x_tsLoMAPBLSxOz2NB0pLo/view?usp=drive_link",
     size: "2.3 GB",
     primary: true,
-    speed: "최대 100MB/s",
-    availability: "8월 31~9월1일 다운로드 가능"
+    speed: "초고속 구글 드라이브",
+    availability: "즉시 다운로드 가능"
   },
 ];
 
@@ -360,50 +379,50 @@ export default function App() {
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text
-  const promoText = `⭕️⭕️２．０　반하자　황혼서버⭕️⭕️9월1일　화요일　새로운 컨샙으로 돌아옵니다 19시 오대기 20시 오픈⭕️⭕️⭕️⭕️
+  const promoText = `2.0하자 황혼서버 빡셈주의! 9월1일 오픈 - 오대기 19시 ~오픈 20시
 
 
-🚨 ** 중요** 빡센 농사꾼이 될 자신이 없다면 오지마세요
+ ** 중요** 빡센 농사꾼이 될 자신이 없다면 오지마세요
 
-✡️ 빛과 어둠이 교차하는 순간, 진짜 전투가 시작된다. ✡️
+ 빛과 어둠이 교차하는 순간, 진짜 전투가 시작된다.
 
-⭕️⭕️시간과 끈기만이 살길이다!!! ⭕️⭕️
+시간과 끈기만이 살길이다!!!
 
-✔️✔️ 리니지 2.0의 감성은 그대로, 플레이어들이 아쉬워했던 부분은 개선하기 위해 노력했습니다. ✔️✔️
+ 리니지 2.0의 감성은 그대로, 플레이어들이 아쉬워했던 부분은 개선하기 위해 노력했습니다.
 
-⭕️⭕️ 원작의 분위기는 유지하면서 불편했던 요소는 편의 시스템으로 보완⭕️⭕️
+ 원작의 분위기는 유지하면서 불편했던 요소는 편의 시스템으로 보완
 
-☑️☑️시간과 노력만으로 10검 9셋 가능!!!! 노가다 만으로 가능!! ☑️☑️
-⭕️⭕️보스코인 시스템!! ⭕️⭕️
+시간과 노력만으로 10검 9셋 가능!!!! 노가다 만으로 가능!!
+보스코인 시스템!!
 일반보스들이 100퍼센트 보스코인 드랍!!
 보스몬스터 드랍테이블에 있는 템들 드랍확률 최소 1퍼센트!!!
-⭕️⭕️보스를 잡으며 얻는 보스코인으로 원하는 템 구매 가능⭕️⭕️
+보스를 잡으며 얻는 보스코인으로 원하는 템 구매 가능
 
-☑️☑️ 칼렉, 길렉 등 기존 2.0 서버에서 자주 발생했던 불편 사항 개선☑️☑️
+ 칼렉, 길렉 등 기존 2.0 서버에서 자주 발생했던 불편 사항 개선
 
-⭕️⭕️ 자동사냥 시스템 지원⭕️⭕️
+ 자동사냥 시스템 지원
 (손사냥이 더욱 높은 효율을 가질 수 있도록 설계)
 
-☑️☑️ 장기 운영을 목표로 하는 반하자지향 서버☑️☑️
+ 장기 운영을 목표로 하는 반하자지향 서버
 단기간에 모든 것을 얻기보다,
 하루하루 성장하며 장비를 맞춰가는 재미를 추구합니다.
 
-☑️☑️린클의 지루함과 식상함을 덜어내기 위해  신기하고 다양한 개별 아이템 및 세트 아이템들 대기중!! ☑️☑️
+린클의 지루함과 식상함을 덜어내기 위해  신기하고 다양한 개별 아이템 및 세트 아이템들 대기중!!
 
-⭕️⭕️ 아이템 가치가 쉽게 무너지지 않는 안정적인 성장 구조⭕️⭕️
+ 아이템 가치가 쉽게 무너지지 않는 안정적인 성장 구조
 
-⭕️⭕️ 자유로운 유저 간 거래 지원⭕️⭕️
+ 자유로운 유저 간 거래 지원
 
-☑️☑️ 샤르나 변신 뿐만 아니라 린클 변신 시스템 지원☑️☑️
+ 샤르나 변신 뿐만 아니라 린클 변신 시스템 지원
 그 시절의 감성과 전투의 재미를 동시에 경험할 수 있습니다.
 
-⭕️⭕️ 플레이어들의 의견을 듣고, 더 많은 분들이 만족할 수 있는 방향으로 꾸준히 개선해 나가겠습니다.⭕️⭕️
+플레이어들의 의견을 듣고, 더 많은 분들이 만족할 수 있는 방향으로 꾸준히 개선해 나가겠습니다.
 
-☑️☑️ 황혼서버만의 다양한 콘텐츠와 시스템을 지속적으로 업데이트합니다.☑️☑️
+ 황혼서버만의 다양한 콘텐츠와 시스템을 지속적으로 업데이트합니다.
 
-텔레그램  :  https://t.me/+gXAtzqiPDINhNzBi
+텔레그램  :  https://t.me/ gXAtzqiPDINhNzBi
 
-홈페이지 :  https://twilighthwanghon.netlify.app/`;
+홈페이지 :  https://twilighthwanghon.netlify.app`;
 
   const handleCopyPromo = () => {
     navigator.clipboard.writeText(promoText);
@@ -490,13 +509,15 @@ export default function App() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#download"
+              href="https://drive.google.com/file/d/12sGhUPQv73x_tsLoMAPBLSxOz2NB0pLo/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-4 py-2 text-xs font-black rounded-lg uppercase tracking-wider text-[#120a22] transition-all hover:brightness-110 active:scale-95 shadow-md shadow-amber-500/25 border border-amber-300/60"
               style={{ background: "linear-gradient(135deg, #fce289, #e6b94d, #c99326)" }}
               id="header-dl-btn"
             >
-              <Calendar size={13} />
-              다운로드 일정
+              <Download size={13} />
+              클라이언트 다운로드
             </a>
 
             <button
@@ -600,12 +621,14 @@ export default function App() {
             className="flex flex-col sm:flex-row justify-center gap-3.5 mb-10"
           >
             <a
-              href="#download"
+              href="https://drive.google.com/file/d/12sGhUPQv73x_tsLoMAPBLSxOz2NB0pLo/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2.5 px-6 py-3.5 font-black text-sm rounded-xl bg-gradient-to-r from-[#fce289] via-[#e6b94d] to-[#c99326] text-[#140c26] hover:brightness-110 transition-all shadow-xl shadow-amber-500/20 active:scale-95 border border-amber-200/70"
               id="hero-download-action"
             >
-              <Calendar size={16} />
-              8월 31~9월1일 다운로드 오픈
+              <Download size={16} />
+              클라이언트 다운로드 (구글 드라이브)
             </a>
             <a
               href="#classes"
@@ -1076,28 +1099,32 @@ export default function App() {
 
           <div className="grid gap-3.5 mb-10" id="download-actions-list">
             {DOWNLOAD_LINKS.map((dl, i) => (
-              <div
+              <a
                 key={i}
-                className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl border border-amber-300/40 bg-gradient-to-r from-amber-500/15 via-yellow-400/5 to-[#160f2d] text-left group gap-4 relative overflow-hidden shadow-xl"
+                href={dl.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl border border-amber-300/40 bg-gradient-to-r from-amber-500/15 via-yellow-400/5 to-[#160f2d] text-left group gap-4 relative overflow-hidden shadow-xl hover:border-amber-300/80 hover:brightness-105 transition-all"
                 id={`download-link-btn-${i}`}
               >
                 <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-amber-400/20 border border-amber-300/30 flex items-center justify-center shrink-0 text-amber-300">
-                    <Calendar size={20} />
+                  <div className="w-11 h-11 rounded-xl bg-amber-400/20 border border-amber-300/30 flex items-center justify-center shrink-0 text-amber-300 group-hover:scale-110 transition-transform">
+                    <Download size={20} />
                   </div>
                   <div>
-                    <span className="font-bold text-base text-white/95 block">
+                    <span className="font-bold text-base text-white/95 block group-hover:text-amber-200 transition-colors">
                       {dl.label}
                     </span>
-                    <span className="text-xs text-amber-200/80 block mt-0.5 font-mono">다운로드 일정: {dl.availability}</span>
+                    <span className="text-xs text-amber-200/80 block mt-0.5 font-mono">다운로드 방식: {dl.speed} ({dl.size})</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 relative z-10 self-end sm:self-center">
-                  <span className="text-xs font-bold text-amber-200 bg-amber-500/20 border border-amber-300/40 px-4 py-2 rounded-xl shadow-sm">
-                    8월 31~9월1일 다운로드 가능
+                  <span className="text-xs font-bold text-amber-950 bg-gradient-to-r from-[#fce289] to-[#e6b94d] border border-amber-200/60 px-5 py-2.5 rounded-xl shadow-md flex items-center gap-1.5 group-hover:brightness-110 transition-all">
+                    <Download size={14} />
+                    다운로드 바로가기
                   </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
