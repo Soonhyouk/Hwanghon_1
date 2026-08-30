@@ -1228,14 +1228,10 @@ export default function App() {
               커뮤니티사이트 5개 홍보 → 홍보보상상자
             </p>
 
-            <div className="bg-[#1a1236] border border-amber-300/30 rounded-2xl p-4 text-left text-xs space-y-2.5 backdrop-blur-sm shadow-md">
+            <div className="bg-[#1a1236] border border-amber-300/30 rounded-2xl p-4 text-center text-xs space-y-2 backdrop-blur-sm shadow-md">
               <p className="text-white/90 leading-relaxed">
-                하루에 사이트 5곳에 홍보하시고 운영자에게 개인텔레로 스크린샷을 보내주시면 홍보보상상자를 지급해드립니다.
+                하루에 사이트 5곳에 홍보하시고 운영자에게 개인텔레로 스크린샷을 보내주시면 확인 후 <span className="text-[#fce289] font-bold">홍보보상상자</span>를 지급해드립니다.
               </p>
-              <div className="text-amber-200/90 text-[11px] pt-2 border-t border-amber-300/20 flex flex-col sm:flex-row sm:items-center gap-1">
-                <span className="font-bold text-[#fce289] shrink-0">🎁 (홍보보상상자 -</span>
-                <span className="text-white/80">경험치물약20퍼 2개, 픽시깃털 200개, 전강 5개, 자사5시간, 버프물약 5개)</span>
-              </div>
             </div>
           </div>
 
