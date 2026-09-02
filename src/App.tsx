@@ -161,33 +161,33 @@ const CLASSES: ClassInfo[] = [
 
 const FEATURES = [
   {
-    icon: <Coins size={24} />,
-    title: "보스코인 시스템",
-    desc: "일반 보스 100퍼센트 보스코인 드랍\n(보스코인 상점에서 상위템 구입 가능)",
-    badge: "시그니처"
+    icon: <Sparkles size={24} />,
+    title: "자동사냥 & 편의 시스템",
+    desc: "칼렉, 길렉 개선 및 편리한 자동사냥 지원\n(손사냥이 더욱 높은 효율을 내도록 설계)",
+    badge: "편의"
   },
   {
     icon: <Zap size={24} />,
     title: "즉시 사냥 가능",
-    desc: "접속 즉시 스타터 장비와 소비 아이템 지급. 오대기 후 최고 속도로 전장 합류.",
+    desc: "접속 즉시 스타터 장비와 소비 아이템 지급. 정식 오픈 즉시 최고 속도로 전장 합류.",
     badge: "인기"
   },
   {
     icon: <Shield size={24} />,
     title: "완벽한 클래스 밸런스",
-    desc: "서버 전용 밸런싱 패치를 통해 요정, 법사 등 전 직업이 매력적인 PvP/PvE 구도.",
+    desc: "서버 전용 밸런싱 패치를 통해 군주, 기사, 요정, 법사 전 직업의 매력적인 PvP/PvE 구도.",
     badge: "핵심"
   },
   {
     icon: <Trophy size={24} />,
     title: "명예의 전당 랭킹",
-    desc: "종합 레벨, 주간 PvP 처치 수, 공성 기여도에 따른 실시간 랭킹 추적 및 특별 칭호/오라 부여.",
+    desc: "종합 레벨 및 주간 PvP 처치 수에 따른 공정한 실시간 랭킹 시스템.",
     badge: "경쟁"
   },
   {
     icon: <Map size={24} />,
     title: "특화 던전 분리",
-    desc: "던전별 초반 아이템 드랍\n(상아탑6층 - 무기, 얼음던전 - 방어구)",
+    desc: "던전별 초반 아이템 드랍\n(상아탑 6층 - 무기, 얼음던전 - 방어구)",
     badge: "컨텐츠"
   },
   {
@@ -315,15 +315,15 @@ const SERVER_STATS = [
   { label: "경험치 배율", value: "x10", sub: "EXP RATE", desc: "안정적인 성장 밸런스" },
   { label: "아이템 드랍", value: "x1", sub: "DROP RATE", desc: "득템의 손맛과 가치 보존" },
   { label: "아데나 배율", value: "x1", sub: "GOLD RATE", desc: "탄탄하고 공정한 경제" },
-  { label: "서버 시즌", value: "NEW\n컨셉", sub: "새로운 출발", desc: "" },
+  { label: "서버 시즌", value: "하자\nSeason 1", sub: "SEASON 1", desc: "" },
 ];
 
 const NOTICES: Notice[] = [
   {
-    date: "2026.09.01",
+    date: "2026.09.11",
     tag: "공지",
-    title: "황혼서버 9월 1일(화) 새로운 컨셉 오픈 안내",
-    content: "9월 1일 화요일 새로운 컨셉으로 돌아옵니다! 19시 오대기, 20시 정식 오픈으로 찾아뵙겠습니다."
+    title: "황혼서버 9월 11일(금) 19시 정식 오픈 안내",
+    content: "9월 11일 19시 정식 오픈합니다! (오대기 없음)\n\n혈원 10명 달성 시 단체지원(6검4셋+인형주머니) 등 풍성한 혜택이 준비되어 있습니다.\n문의 및 단체지원 신청은 운영자 개인 텔레그램(@Twilighthwanghon)으로 연락 부탁드립니다."
   },
 ];
 
@@ -379,10 +379,11 @@ export default function App() {
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text
-  const promoText = `2.0하자 황혼서버 빡셈주의! 9월1일 오픈 - 오대기 19시 ~오픈 20시
+  const promoText = `2.0하자 황혼서버 9월 11일 19시 정식 오픈 (오대기 없음)
 
 
  ** 중요** 빡센 농사꾼이 될 자신이 없다면 오지마세요
+ 혈원 10명 채울 경우 단체지원(6검4셋+인형주머니)
 
  빛과 어둠이 교차하는 순간, 진짜 전투가 시작된다.
 
@@ -393,10 +394,8 @@ export default function App() {
  원작의 분위기는 유지하면서 불편했던 요소는 편의 시스템으로 보완
 
 시간과 노력만으로 10검 9셋 가능!!!! 노가다 만으로 가능!!
-보스코인 시스템!!
-일반보스들이 100퍼센트 보스코인 드랍!!
 보스몬스터 드랍테이블에 있는 템들 드랍확률 최소 1퍼센트!!!
-보스를 잡으며 얻는 보스코인으로 원하는 템 구매 가능
+보스를 토벌하며 득템의 감동을 직접 경험하세요!
 
  칼렉, 길렉 등 기존 2.0 서버에서 자주 발생했던 불편 사항 개선
 
@@ -420,7 +419,7 @@ export default function App() {
 
  황혼서버만의 다양한 콘텐츠와 시스템을 지속적으로 업데이트합니다.
 
-텔레그램  :  https://t.me/ gXAtzqiPDINhNzBi
+개인 텔레그램  :  https://t.me/Twilighthwanghon (@Twilighthwanghon)
 
 홈페이지 :  https://twilighthwanghon.netlify.app`;
 
@@ -434,71 +433,71 @@ export default function App() {
 
   return (
     <div
-      className="min-h-screen bg-[#0e091c] text-[#f7f4ee] relative overflow-x-hidden selection:bg-[#e6b94d]/30 selection:text-[#f8d478]"
+      className="min-h-screen bg-[#fcfaf5] text-[#1e1829] relative overflow-x-hidden selection:bg-[#fde08b] selection:text-[#633806]"
       style={{ fontFamily: "'Inter', 'Noto Sans KR', sans-serif" }}
     >
-      {/* ─── BRIGHT LUMINOUS AMBIENT GLOWS & PARTICLES ─── */}
+      {/* ─── BRIGHT LUMINOUS AMBIENT GLOWS & GOLDEN SUNLIGHT ─── */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Soft Golden Sunlight / Twilight Glow from Top Center */}
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[850px] h-[550px] rounded-full opacity-25 blur-[140px] bg-gradient-to-b from-amber-300 via-yellow-500 to-rose-400" />
-        {/* Radiant Emerald-Cyan Aura on Left */}
-        <div className="absolute top-1/4 -left-40 w-[600px] h-[600px] rounded-full opacity-20 blur-[150px] bg-emerald-400" />
-        {/* Ethereal Violet-Gold Magic Aura on Right */}
-        <div className="absolute top-1/3 -right-32 w-[650px] h-[650px] rounded-full opacity-20 blur-[160px] bg-purple-400" />
-        {/* Warm Golden Bottom Floor Ambient */}
-        <div className="absolute bottom-10 left-1/3 w-[700px] h-[500px] rounded-full opacity-15 blur-[160px] bg-amber-500" />
+        {/* Radiant Sunlight Glow from Top Center */}
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[550px] rounded-full opacity-40 blur-[140px] bg-gradient-to-b from-amber-200 via-yellow-200 to-amber-100" />
+        {/* Soft Emerald Aura on Left */}
+        <div className="absolute top-1/4 -left-40 w-[600px] h-[600px] rounded-full opacity-25 blur-[150px] bg-emerald-200" />
+        {/* Ethereal Rose-Gold Magic Aura on Right */}
+        <div className="absolute top-1/3 -right-32 w-[650px] h-[650px] rounded-full opacity-25 blur-[160px] bg-purple-200" />
+        {/* Warm Golden Bottom Ambient */}
+        <div className="absolute bottom-10 left-1/3 w-[700px] h-[500px] rounded-full opacity-25 blur-[160px] bg-amber-200" />
 
-        {/* Subtle Starlight and Magic Grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120px,rgba(255,235,170,0.06),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] opacity-40" />
+        {/* Subtle Starlight and Radiant Light Grid */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120px,rgba(245,197,66,0.08),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(217,170,40,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(217,170,40,0.04)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
       </div>
 
-      {/* ─── HEADER ─── */}
+      {/* ─── HEADER (BRIGHT LUMINOUS) ─── */}
       <header
-        className="sticky top-0 z-50 border-b border-[#e6b94d]/20 transition-all shadow-lg shadow-black/20"
+        className="sticky top-0 z-50 border-b border-amber-200/80 transition-all shadow-sm shadow-amber-950/5"
         style={{
-          background: "rgba(14, 9, 28, 0.85)",
+          background: "rgba(255, 255, 255, 0.92)",
           backdropFilter: "blur(20px)",
         }}
         id="header-app"
       >
         <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
           <a href="#intro" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full overflow-hidden shadow-lg shadow-amber-500/20 transition-transform group-hover:scale-105 border-2 border-[#e6b94d]/60 relative">
+            <div className="w-10 h-10 rounded-full overflow-hidden shadow-md shadow-amber-500/20 transition-transform group-hover:scale-105 border-2 border-[#dca326] relative bg-amber-50">
               <img
                 src={twilightLogo}
                 alt="황혼서버 Logo"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-amber-300/40 rounded-full" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-amber-400/40 rounded-full" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <p
-                  className="text-[#f8ecd2] font-black leading-none tracking-wider text-base group-hover:text-[#e6b94d] transition-colors"
+                  className="text-[#1e1829] font-black leading-none tracking-wider text-base group-hover:text-[#b47e12] transition-colors"
                   style={{ fontFamily: "'Noto Serif KR', serif" }}
                 >
                   황혼서버
                 </p>
-                <Sparkles size={13} className="text-[#e6b94d] animate-pulse" />
+                <Sparkles size={13} className="text-[#dca326] animate-pulse" />
               </div>
-              <p className="text-amber-200/60 text-[10px] uppercase tracking-wider font-mono mt-0.5">Classic Twilight Server</p>
+              <p className="text-amber-800/70 text-[10px] uppercase tracking-wider font-mono mt-0.5 font-bold">Classic Twilight Server</p>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1.5">
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href.slice(1);
               return (
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all rounded-lg ${
+                  className={`px-4 py-2 text-xs sm:text-sm uppercase tracking-wider transition-all rounded-lg ${
                     isActive
-                      ? "text-[#f8ecd2] bg-[#e6b94d]/20 border border-[#e6b94d]/40 shadow-sm shadow-amber-500/10 font-bold"
-                      : "text-white/70 hover:text-amber-100 hover:bg-white/5"
+                      ? "text-amber-950 bg-amber-200/90 border border-amber-400 shadow-xs font-black"
+                      : "text-[#20182c] font-black hover:text-amber-950 hover:bg-amber-100"
                   }`}
                 >
                   {link.label}
@@ -509,25 +508,23 @@ export default function App() {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://drive.google.com/file/d/12sGhUPQv73x_tsLoMAPBLSxOz2NB0pLo/view?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-4 py-2 text-xs font-black rounded-lg uppercase tracking-wider text-[#120a22] transition-all hover:brightness-110 active:scale-95 shadow-md shadow-amber-500/25 border border-amber-300/60"
-              style={{ background: "linear-gradient(135deg, #fce289, #e6b94d, #c99326)" }}
+              href="#download"
+              className="flex items-center gap-2 px-5 py-2.5 text-xs sm:text-sm font-black rounded-lg uppercase tracking-wider text-[#1e1302] transition-all hover:brightness-105 active:scale-95 shadow-md shadow-amber-500/25 border-2 border-amber-400"
+              style={{ background: "linear-gradient(135deg, #ffe082, #f5be38, #d49818)" }}
               id="header-dl-btn"
             >
-              <Download size={13} />
-              클라이언트 다운로드
+              <Calendar size={15} />
+              9월 10일 다운로드가능
             </a>
 
             <button
-              className="md:hidden p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              className="md:hidden p-2 text-[#20182c] hover:text-[#110e17] hover:bg-amber-100 rounded-lg transition-colors"
               onClick={() => setMobileNavOpen(!mobileNavOpen)}
               id="menu-toggle-btn"
             >
               <ChevronDown
-                size={18}
-                className={`transition-transform duration-300 ${mobileNavOpen ? "rotate-180 text-[#e6b94d]" : ""}`}
+                size={20}
+                className={`transition-transform duration-300 ${mobileNavOpen ? "rotate-180 text-[#dca326]" : ""}`}
               />
             </button>
           </div>
@@ -541,18 +538,18 @@ export default function App() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="md:hidden border-t border-[#e6b94d]/20 bg-[#140e26] overflow-hidden"
+              className="md:hidden border-t-2 border-amber-300 bg-white shadow-xl overflow-hidden"
               id="mobile-nav-panel"
             >
-              <div className="px-4 py-3 space-y-1">
+              <div className="px-4 py-3 space-y-1.5">
                 {NAV_LINKS.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`block py-2.5 px-3 text-sm font-semibold rounded-lg transition-colors ${
+                    className={`block py-3 px-4 text-sm sm:text-base font-black rounded-lg transition-colors ${
                       activeSection === link.href.slice(1)
-                        ? "text-[#e6b94d] bg-[#e6b94d]/15 border-l-4 border-[#e6b94d]"
-                        : "text-white/70 hover:text-white hover:bg-white/5"
+                        ? "text-amber-950 bg-amber-100 border-l-4 border-amber-500"
+                        : "text-[#20182c] hover:text-[#110e17] hover:bg-amber-50"
                     }`}
                     onClick={() => setMobileNavOpen(false)}
                   >
@@ -565,34 +562,28 @@ export default function App() {
         </AnimatePresence>
       </header>
 
-      {/* ─── HERO SECTION (BRIGHT FANTASY WITH BEAUTIFUL ELF & MAGE) ─── */}
-      <section id="intro" className="relative min-h-[92vh] flex items-center pt-8 pb-20 overflow-hidden" md-id="hero-section">
-        {/* Soft Luminous Background Ambient Lighting */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-10 right-10 w-[500px] h-[500px] rounded-full bg-amber-300/10 blur-[120px]" />
-          <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full bg-purple-400/10 blur-[130px]" />
-        </div>
-
+      {/* ─── HERO SECTION (BRIGHT FANTASY) ─── */}
+      <section id="intro" className="relative min-h-[90vh] flex items-center pt-10 pb-20 overflow-hidden" md-id="hero-section">
         <div className="relative z-10 max-w-4xl mx-auto px-4 w-full text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-300/40 bg-gradient-to-r from-amber-500/15 via-yellow-400/10 to-transparent text-xs font-bold text-[#f7d67b] mb-6 shadow-sm shadow-amber-500/10 backdrop-blur-sm"
+            className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border-2 border-amber-400/90 bg-gradient-to-r from-amber-100 via-yellow-50 to-amber-100 text-sm sm:text-base font-extrabold text-amber-950 mb-6 shadow-md shadow-amber-500/15 backdrop-blur-sm"
           >
-            <Sparkles size={14} className="text-amber-300 animate-spin" style={{ animationDuration: '8s' }} />
-            <span className="font-mono tracking-wide">9월 1일 화요일 대오픈! (19시 오대기 / 20시 오픈)</span>
+            <Sparkles size={18} className="text-amber-600 animate-spin shrink-0" style={{ animationDuration: '8s' }} />
+            <span className="font-mono tracking-wide">9월 11일 19시 정식 오픈! (오대기 없음)</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.25] mb-6 text-[#fbf8f0]"
+            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.25] mb-6 text-[#110e17]"
             style={{ fontFamily: "'Noto Serif KR', serif" }}
           >
             황혼서버 하자 지향,<br />
-            <span className="bg-gradient-to-r from-[#ffe494] via-[#f5cb5c] to-[#e6b94d] bg-clip-text text-transparent drop-shadow-sm">
+            <span className="bg-gradient-to-r from-[#9b6805] via-[#d49611] to-[#a36f07] bg-clip-text text-transparent drop-shadow-xs font-black">
               노력과 시간이 미래를 바꾼다.
             </span>
           </motion.h1>
@@ -601,16 +592,27 @@ export default function App() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mb-8 max-w-2xl mx-auto space-y-3"
+            className="mb-8 max-w-2xl mx-auto space-y-4"
           >
-            <p className="text-white/80 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-[#20182c] text-base sm:text-lg leading-relaxed font-bold">
               빛과 정령이 숨 쉬는 환상적인 세계로 초대합니다. 
               정교하게 다듬어진 2.0 클래식 편의 시스템과 함께 
               노력한 만큼 반드시 보상받는 정통 성장의 감동을 경험하세요.
             </p>
-            <p className="inline-block px-4 py-2 rounded-xl bg-red-500/15 border border-red-400/40 text-rose-200 text-xs sm:text-sm font-bold tracking-wide shadow-md shadow-red-950/30">
-              🚨 <span className="text-amber-300 font-extrabold">** 중요**</span> 빡센 농사꾼이 될 자신이 없다면 오지마세요
-            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-1">
+              <p className="inline-block px-5 py-2.5 rounded-xl bg-rose-100 border-2 border-rose-400 text-rose-950 text-sm sm:text-base font-black tracking-wide shadow-sm">
+                🚨 <span className="text-rose-900 font-black">** 중요**</span> 빡센 농사꾼이 될 자신이 없다면 오지마세요
+              </p>
+            </div>
+
+            {/* Group Support 10 Members Banner */}
+            <div>
+              <div className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-100 via-yellow-100 to-amber-100 border-2 border-amber-400 text-amber-950 text-sm sm:text-base font-black tracking-wide shadow-md shadow-amber-900/10">
+                <span className="text-lg">👑</span>
+                <span>혈원 <span className="text-amber-800 font-black underline decoration-amber-500 decoration-2 underline-offset-2">10명</span> 채울 경우 <span className="text-amber-900 font-black">단체지원 (6검4셋 + 인형주머니)</span></span>
+              </div>
+            </div>
           </motion.div>
 
           {/* Action Buttons */}
@@ -621,84 +623,82 @@ export default function App() {
             className="flex flex-col sm:flex-row justify-center gap-3.5 mb-10"
           >
             <a
-              href="https://drive.google.com/file/d/12sGhUPQv73x_tsLoMAPBLSxOz2NB0pLo/view?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2.5 px-6 py-3.5 font-black text-sm rounded-xl bg-gradient-to-r from-[#fce289] via-[#e6b94d] to-[#c99326] text-[#140c26] hover:brightness-110 transition-all shadow-xl shadow-amber-500/20 active:scale-95 border border-amber-200/70"
+              href="#download"
+              className="flex items-center justify-center gap-2.5 px-6 py-3.5 font-black text-sm sm:text-base rounded-xl bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] text-[#1e1302] hover:brightness-105 transition-all shadow-lg shadow-amber-500/20 active:scale-95 border-2 border-amber-400"
               id="hero-download-action"
             >
-              <Download size={16} />
-              클라이언트 다운로드 (구글 드라이브)
+              <Calendar size={18} />
+              9월 10일 다운로드가능
             </a>
             <a
               href="#classes"
-              className="flex items-center justify-center gap-2 px-6 py-3.5 font-bold text-sm rounded-xl bg-white/5 border border-amber-300/40 text-[#f7d67b] hover:bg-[#e6b94d]/15 hover:border-amber-300/70 transition-all active:scale-95 shadow-md shadow-black/20"
+              className="flex items-center justify-center gap-2 px-6 py-3.5 font-black text-sm sm:text-base rounded-xl bg-white border-2 border-amber-400 text-amber-950 hover:bg-amber-50 transition-all active:scale-95 shadow-sm"
               id="hero-classes-action"
             >
-              <Sparkles size={16} className="text-amber-300" />
+              <Sparkles size={18} className="text-amber-700" />
               대표 클래스 (군주·기사·요정·법사)
             </a>
             <a
               href="#zones"
-              className="flex items-center justify-center gap-2 px-5 py-3.5 font-semibold text-xs rounded-xl border border-white/10 text-white/70 hover:text-white hover:bg-white/5 transition-all"
+              className="flex items-center justify-center gap-2 px-5 py-3.5 font-extrabold text-xs sm:text-sm rounded-xl border-2 border-amber-300 text-[#20182c] hover:text-[#110e17] hover:bg-white transition-all shadow-xs"
               id="hero-zones-action"
             >
-              <Map size={14} />
+              <Map size={16} />
               사냥터 정보
             </a>
           </motion.div>
 
-          {/* Server Stats Highlight Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
+          {/* Server Stats Highlight Cards (Bright) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 max-w-2xl mx-auto">
             {SERVER_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-[#18112e]/90 border border-amber-300/20 rounded-xl p-3.5 text-center shadow-lg relative overflow-hidden group hover:border-amber-300/50 hover:bg-[#20173d] transition-all"
+                className="bg-white border-2 border-amber-200/90 rounded-2xl p-4 text-center shadow-md shadow-amber-900/5 relative overflow-hidden group hover:border-amber-400 hover:bg-white hover:shadow-lg transition-all"
               >
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber-300/50 to-transparent" />
-                <p className="text-[10px] font-mono tracking-widest text-[#e6b94d] uppercase mb-0.5 font-bold">{stat.sub}</p>
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
+                <p className="text-[11px] font-mono tracking-widest text-amber-900 uppercase mb-0.5 font-black">{stat.sub}</p>
                 <p
-                  className="text-2xl font-extrabold text-[#fdf8ed] my-1 tracking-tight whitespace-pre-line leading-tight flex items-center justify-center min-h-[32px]"
+                  className="text-2xl sm:text-3xl font-black text-[#110e17] my-1 tracking-tight whitespace-pre-line leading-tight flex items-center justify-center min-h-[36px]"
                   style={{ fontFamily: "'Cinzel', serif" }}
                 >
                   {stat.value}
                 </p>
-                <p className="text-[11px] font-semibold text-white/90">{stat.label}</p>
+                <p className="text-xs font-black text-[#20182c]">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── CHARACTER & CLASS SHOWCASE SECTION (PRINCE, KNIGHT, ELF, MAGE) ─── */}
-      <section id="classes" className="py-24 border-y border-[#e6b94d]/20 bg-gradient-to-b from-[#140e28] via-[#16102d] to-[#0e091c] relative z-10" md-id="classes-section">
+      {/* ─── CHARACTER & CLASS SHOWCASE SECTION ─── */}
+      <section id="classes" className="py-24 border-y border-amber-200/70 bg-gradient-to-b from-[#f9f6ee] via-[#ffffff] to-[#f7f3ea] relative z-10" md-id="classes-section">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-300/30 text-amber-300 text-xs font-bold font-mono uppercase mb-3">
-              <Sparkles size={13} /> Class Spotlight
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border-2 border-amber-300 text-amber-950 text-xs font-black font-mono uppercase mb-3 shadow-xs">
+              <Sparkles size={14} className="text-amber-700" /> Class Spotlight
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#fdf8ed]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               황혼을 밝히는 4대 대표 클래스
             </h2>
-            <div className="mt-3 mx-auto w-20 h-0.5 bg-gradient-to-r from-transparent via-[#e6b94d] to-transparent" />
-            <p className="text-white/70 text-sm mt-3 max-w-lg mx-auto font-light">
+            <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
+            <p className="text-[#20182c] text-sm sm:text-base mt-3 max-w-xl mx-auto font-bold">
               리니지 2.0 클래식 감성을 고스란히 담아낸 군주, 기사, 요정, 마법사. 전장의 승리를 이끌 당신의 주인공을 선택하세요.
             </p>
 
             {/* Class Toggle Buttons */}
-            <div className="inline-flex flex-wrap justify-center mt-8 p-1.5 rounded-2xl bg-[#0b0717] border border-amber-300/30 shadow-inner gap-1">
+            <div className="inline-flex flex-wrap justify-center mt-8 p-2 rounded-2xl bg-[#ede6d4] border-2 border-amber-300/80 shadow-inner gap-1.5">
               {CLASSES.map((cls) => {
                 const isSelected = selectedClassTab === cls.id;
                 const classIcon = () => {
                   switch (cls.id) {
                     case "prince":
-                      return <Crown size={16} />;
+                      return <Crown size={18} />;
                     case "knight":
-                      return <Shield size={16} />;
+                      return <Shield size={18} />;
                     case "elf":
-                      return <Compass size={16} />;
+                      return <Compass size={18} />;
                     case "mage":
-                      return <Wand2 size={16} />;
+                      return <Wand2 size={18} />;
                   }
                 };
 
@@ -706,10 +706,10 @@ export default function App() {
                   <button
                     key={cls.id}
                     onClick={() => setSelectedClassTab(cls.id)}
-                    className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                    className={`flex items-center gap-2 px-5 sm:px-7 py-3 rounded-xl text-xs sm:text-base font-black transition-all ${
                       isSelected
-                        ? "bg-gradient-to-r from-[#fce289] to-[#e6b94d] text-[#120a22] shadow-md shadow-amber-500/20"
-                        : "text-white/60 hover:text-white hover:bg-white/5"
+                        ? "bg-gradient-to-r from-[#ffe082] to-[#f5be38] text-[#1e1302] shadow-md shadow-amber-500/20 border-2 border-amber-400"
+                        : "text-[#20182c] hover:text-[#110e17] hover:bg-white/70"
                     }`}
                     id={`btn-class-${cls.id}`}
                   >
@@ -730,37 +730,37 @@ export default function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.35 }}
-                className="grid md:grid-cols-12 gap-8 items-center bg-[#181130]/90 border border-amber-300/30 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden backdrop-blur-md"
+                className="grid md:grid-cols-12 gap-8 items-center bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 shadow-xl shadow-amber-950/5 relative overflow-hidden backdrop-blur-md"
               >
                 {/* Background Ambient Glow */}
                 <div
-                  className="absolute -right-20 -top-20 w-80 h-80 rounded-full blur-[100px] pointer-events-none opacity-40"
+                  className="absolute -right-20 -top-20 w-80 h-80 rounded-full blur-[100px] pointer-events-none opacity-30"
                   style={{
                     background:
                       currentClass.id === "prince"
-                        ? "rgba(245,158,11,0.4)"
+                        ? "rgba(245,158,11,0.3)"
                         : currentClass.id === "knight"
-                        ? "rgba(59,130,246,0.4)"
+                        ? "rgba(59,130,246,0.3)"
                         : currentClass.id === "elf"
-                        ? "rgba(16,185,129,0.4)"
-                        : "rgba(168,85,247,0.4)",
+                        ? "rgba(16,185,129,0.3)"
+                        : "rgba(168,85,247,0.3)",
                   }}
                 />
 
                 {/* Left: Character Portrait Card */}
                 <div className="md:col-span-5 relative group">
-                  <div className="relative rounded-2xl overflow-hidden border-2 border-amber-300/40 shadow-xl bg-[#0d091a]">
+                  <div className="relative rounded-2xl overflow-hidden border-2 border-amber-400 shadow-md bg-amber-50">
                     <img
                       src={currentClass.image}
                       alt={currentClass.name}
                       className="w-full h-80 sm:h-96 object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#140e28] via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                     
                     {/* Role Chip Overlay */}
                     <div className="absolute bottom-4 left-4 right-4 text-center">
-                      <span className="inline-block text-xs font-bold text-amber-200 bg-black/60 border border-amber-300/40 px-3.5 py-1 rounded-full backdrop-blur-md">
+                      <span className="inline-block text-xs sm:text-sm font-black text-white bg-black/75 border border-white/40 px-4 py-1.5 rounded-full backdrop-blur-md">
                         {currentClass.role}
                       </span>
                     </div>
@@ -770,31 +770,31 @@ export default function App() {
                 {/* Right: Character Details, Lore, and Stats */}
                 <div className="md:col-span-7 text-left space-y-5">
                   <div>
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#e6b94d] uppercase block mb-1">
+                    <span className="text-xs sm:text-sm font-mono font-black tracking-widest text-amber-800 uppercase block mb-1">
                       {currentClass.tagline}
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-black text-[#fdf8ed]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                    <h3 className="text-2xl sm:text-3xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                       {currentClass.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-amber-200/80 font-medium mt-1">
+                    <p className="text-sm font-black text-amber-900 mt-1">
                       {currentClass.title}
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-light">
+                  <p className="text-sm sm:text-base text-[#20182c] leading-relaxed font-bold">
                     {currentClass.desc}
                   </p>
 
                   {/* Signature Skills */}
                   <div>
-                    <p className="text-xs font-bold text-amber-300 mb-2.5 flex items-center gap-1.5">
-                      <Sparkles size={13} /> 대표 시그니처 스킬
+                    <p className="text-xs sm:text-sm font-black text-amber-950 mb-2.5 flex items-center gap-1.5">
+                      <Sparkles size={15} className="text-amber-700" /> 대표 시그니처 스킬
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {currentClass.skills.map((skill, idx) => (
                         <span
                           key={idx}
-                          className="text-xs font-medium bg-amber-500/10 border border-amber-300/30 text-amber-100 px-3 py-1.5 rounded-lg shadow-sm"
+                          className="text-xs sm:text-sm font-black bg-amber-100 border border-amber-300 text-amber-950 px-3.5 py-1.5 rounded-lg shadow-xs"
                         >
                           ✨ {skill}
                         </span>
@@ -803,19 +803,19 @@ export default function App() {
                   </div>
 
                   {/* Stat Meters */}
-                  <div className="space-y-2.5 pt-2 border-t border-white/10">
+                  <div className="space-y-3 pt-3 border-t border-amber-200">
                     {currentClass.stats.map((stat, sIdx) => (
                       <div key={sIdx} className="space-y-1">
-                        <div className="flex justify-between text-xs font-medium">
-                          <span className="text-white/80">{stat.label}</span>
-                          <span className="font-mono font-bold text-[#e6b94d]">{stat.value}%</span>
+                        <div className="flex justify-between text-xs sm:text-sm font-black">
+                          <span className="text-[#20182c] font-black">{stat.label}</span>
+                          <span className="font-mono font-black text-amber-950">{stat.value}%</span>
                         </div>
-                        <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                        <div className="w-full bg-amber-100 rounded-full h-2.5 overflow-hidden border border-amber-200">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${stat.value}%` }}
                             transition={{ duration: 0.8, delay: sIdx * 0.1 }}
-                            className="bg-gradient-to-r from-amber-400 to-yellow-200 h-full rounded-full"
+                            className="bg-gradient-to-r from-amber-400 to-yellow-500 h-full rounded-full"
                           />
                         </div>
                       </div>
@@ -828,25 +828,25 @@ export default function App() {
         </div>
       </section>
 
-      {/* ─── NOTICES SECTION ─── */}
-      <section id="notices" className="py-20 border-b border-white/5 bg-[#100b21]/70 relative z-10" md-id="notices-section">
+      {/* ─── NOTICES SECTION (BRIGHT) ─── */}
+      <section id="notices" className="py-20 border-b border-amber-200/70 bg-[#fbf8f2] relative z-10" md-id="notices-section">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
             <div>
-              <p className="text-xs tracking-widest text-[#e6b94d] font-mono uppercase mb-1">Bulletin Board</p>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#fdf8ed]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+              <p className="text-xs tracking-widest text-amber-800 font-mono uppercase mb-1 font-black">Bulletin Board</p>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 소식 및 패치노트
               </h2>
             </div>
             {/* Filter Tabs */}
-            <div className="flex bg-[#191230] p-1 rounded-xl border border-amber-300/20 self-start">
+            <div className="flex bg-[#ede5d3] p-1 rounded-xl border border-amber-300/80 self-start">
               {(["전체", "공지", "이벤트", "패치"] as const).map((tab) => (
                 <button
                   key={tab}
-                  className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+                  className={`px-4 py-2 text-xs sm:text-sm font-black rounded-lg transition-all ${
                     noticeTab === tab
-                      ? "bg-gradient-to-r from-[#fce289] to-[#e6b94d] text-[#120a22] font-black shadow-sm"
-                      : "text-white/60 hover:text-white"
+                      ? "bg-gradient-to-r from-[#ffe082] to-[#f5be38] text-[#1e1302] font-black shadow-xs border border-amber-300"
+                      : "text-[#20182c] hover:text-[#110e17]"
                   }`}
                   onClick={() => {
                     setNoticeTab(tab);
@@ -860,40 +860,40 @@ export default function App() {
             </div>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-3.5">
             {filteredNotices.map((notice, i) => {
               const badgeColors = {
-                공지: "bg-amber-500/20 text-amber-200 border-amber-400/40",
-                이벤트: "bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-400/40",
-                패치: "bg-sky-500/20 text-sky-200 border-sky-400/40",
+                공지: "bg-amber-100 text-amber-950 border-amber-300 font-black",
+                이벤트: "bg-fuchsia-100 text-fuchsia-950 border-fuchsia-300 font-black",
+                패치: "bg-sky-100 text-sky-950 border-sky-300 font-black",
               };
               const isSelected = selectedNotice?.title === notice.title;
 
               return (
                 <div
                   key={i}
-                  className={`rounded-xl border transition-all cursor-pointer overflow-hidden ${
+                  className={`rounded-2xl border-2 transition-all cursor-pointer overflow-hidden ${
                     isSelected
-                      ? "border-amber-400/60 bg-[#1c133a]"
-                      : "border-white/10 bg-[#160f2e]/80 hover:bg-[#1a1236] hover:border-amber-300/30"
+                      ? "border-amber-400 bg-amber-50 shadow-md"
+                      : "border-amber-200 bg-white hover:bg-amber-50/70 hover:border-amber-300 shadow-sm"
                   }`}
                   onClick={() => setSelectedNotice(isSelected ? null : notice)}
                   id={`notice-item-${i}`}
                 >
                   <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <span className={`text-[10px] font-bold px-2.5 py-1 rounded-md border shrink-0 ${badgeColors[notice.tag]}`}>
+                      <span className={`text-[11px] font-black px-3 py-1 rounded-md border shrink-0 ${badgeColors[notice.tag]}`}>
                         {notice.tag}
                       </span>
-                      <h3 className="text-sm font-semibold text-white/95 group-hover:text-white transition-colors">
+                      <h3 className="text-sm sm:text-base font-black text-[#110e17] group-hover:text-amber-950 transition-colors">
                         {notice.title}
                       </h3>
                     </div>
                     <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0">
-                      <span className="text-[11px] font-mono text-amber-200/50">{notice.date}</span>
+                      <span className="text-xs font-mono text-amber-900 font-black">{notice.date}</span>
                       <ChevronDown
-                        size={14}
-                        className={`text-white/40 transition-transform duration-200 ${isSelected ? "rotate-180 text-amber-300" : ""}`}
+                        size={16}
+                        className={`text-amber-900 transition-transform duration-200 ${isSelected ? "rotate-180 text-amber-700" : ""}`}
                       />
                     </div>
                   </div>
@@ -907,7 +907,7 @@ export default function App() {
                         exit={{ height: 0 }}
                         transition={{ duration: 0.25 }}
                       >
-                        <div className="px-5 pb-5 pt-2 text-xs sm:text-sm text-white/80 leading-relaxed border-t border-white/5 bg-[#120c24] whitespace-pre-line">
+                        <div className="px-5 pb-5 pt-3 text-sm text-[#20182c] leading-relaxed border-t border-amber-200 bg-amber-50/50 whitespace-pre-line font-bold">
                           {notice.content}
                         </div>
                       </motion.div>
@@ -920,16 +920,16 @@ export default function App() {
         </div>
       </section>
 
-      {/* ─── SERVER FEATURES SECTION ─── */}
-      <section id="features" className="py-24 relative z-10" md-id="features-section">
+      {/* ─── SERVER FEATURES SECTION (BRIGHT) ─── */}
+      <section id="features" className="py-24 relative z-10 bg-[#f7f4ec]" md-id="features-section">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-widest text-[#e6b94d] font-mono uppercase mb-2">Designed for Excitement</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#fdf8ed]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+            <p className="text-xs tracking-widest text-amber-800 font-mono uppercase mb-2 font-black">Designed for Excitement</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               황혼서버 시그니처 특징
             </h2>
-            <div className="mt-3 mx-auto w-20 h-0.5 bg-gradient-to-r from-transparent via-[#e6b94d] to-transparent" />
-            <p className="text-white/70 text-sm mt-3 max-w-lg mx-auto font-light">
+            <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
+            <p className="text-[#20182c] text-sm sm:text-base mt-3 max-w-xl mx-auto font-bold">
               오직 플레이어의 쾌감과 안정성에 초점을 맞췄습니다. 클래식 본연의 느낌과 추가된 아이템들의 득템을 융합한 시스템입니다.
             </p>
           </div>
@@ -938,23 +938,23 @@ export default function App() {
             {FEATURES.map((feat, i) => (
               <div
                 key={i}
-                className="bg-[#150f2b]/90 border border-amber-300/20 rounded-2xl p-6 transition-all hover:border-amber-300/50 group relative overflow-hidden hover:-translate-y-1 duration-300 shadow-xl"
+                className="bg-white border-2 border-amber-200/90 rounded-2xl p-6 transition-all hover:border-amber-400 group relative overflow-hidden hover:-translate-y-1 duration-300 shadow-md shadow-amber-900/5 hover:shadow-xl"
               >
-                <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#e6b94d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#dca326] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 
                 <div className="flex justify-between items-start mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#e6b94d]/25 to-amber-500/5 border border-amber-300/30 flex items-center justify-center text-amber-300 transition-all group-hover:scale-110 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-100 to-yellow-50 border border-amber-300 flex items-center justify-center text-amber-900 transition-all group-hover:scale-110 shadow-xs">
                     {feat.icon}
                   </div>
-                  <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-amber-200/60 bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+                  <span className="text-[10px] font-mono font-black tracking-wider uppercase text-amber-950 bg-amber-100 px-3 py-1 rounded-md border border-amber-300">
                     {feat.badge}
                   </span>
                 </div>
                 
-                <h3 className="font-bold text-base text-[#fdf8ed] mb-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                <h3 className="font-black text-lg text-[#110e17] mb-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                   {feat.title}
                 </h3>
-                <p className="text-xs text-white/70 leading-relaxed group-hover:text-white/90 transition-colors whitespace-pre-line font-light">
+                <p className="text-xs sm:text-sm text-[#20182c] leading-relaxed group-hover:text-[#110e17] transition-colors whitespace-pre-line font-bold">
                   {feat.desc}
                 </p>
               </div>
@@ -963,31 +963,31 @@ export default function App() {
         </div>
       </section>
 
-      {/* ─── HUNTING ZONES SECTION ─── */}
-      <section id="zones" className="py-24 border-t border-white/5 bg-[#120c24]/80 relative z-10" md-id="hunting-zones-section">
+      {/* ─── HUNTING ZONES SECTION (BRIGHT) ─── */}
+      <section id="zones" className="py-24 border-t border-amber-200/70 bg-[#fcfaf5] relative z-10" md-id="hunting-zones-section">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-widest text-[#e6b94d] font-mono uppercase mb-2">Tactical Hunting ground</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#fdf8ed]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+            <p className="text-xs tracking-widest text-amber-800 font-mono uppercase mb-2 font-black">Tactical Hunting ground</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               실시간 사냥터 가이드
             </h2>
-            <div className="mt-3 mx-auto w-20 h-0.5 bg-gradient-to-r from-transparent via-[#e6b94d] to-transparent" />
-            <p className="text-white/70 text-sm mt-3 max-w-lg mx-auto font-light">
+            <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
+            <p className="text-[#20182c] text-sm sm:text-base mt-3 max-w-xl mx-auto font-bold">
               자신의 레벨과 장비에 알맞은 구역을 선택해 진입하십시오. 위험도가 높을수록 더 높은 성장과 도전의 재미를 제공합니다.
             </p>
           </div>
 
           {/* Search and Filters Bar */}
-          <div className="bg-[#171030] border border-amber-300/20 rounded-2xl p-4 mb-8 flex flex-col md:flex-row gap-4 justify-between items-center shadow-lg">
+          <div className="bg-white border-2 border-amber-200 rounded-2xl p-4 mb-8 flex flex-col md:flex-row gap-4 justify-between items-center shadow-md shadow-amber-900/5">
             {/* Search Input */}
             <div className="relative w-full md:w-80">
-              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40">
-                <Search size={15} />
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-800">
+                <Search size={16} />
               </span>
               <input
                 type="text"
                 placeholder="사냥터 이름 또는 설명 검색..."
-                className="w-full bg-white/5 text-xs text-white placeholder-white/40 pl-10 pr-4 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-amber-300/60 transition-colors"
+                className="w-full bg-amber-50 text-xs sm:text-sm text-[#110e17] font-bold placeholder-[#5d516d] pl-10 pr-4 py-2.5 rounded-xl border border-amber-300 focus:outline-none focus:border-amber-400 focus:bg-white transition-colors"
                 value={zoneSearch}
                 onChange={(e) => setZoneSearch(e.target.value)}
                 id="zone-search-input"
@@ -996,16 +996,16 @@ export default function App() {
 
             {/* Difficulty Filters */}
             <div className="flex flex-wrap items-center gap-1.5 w-full md:w-auto">
-              <span className="text-xs text-white/50 flex items-center gap-1.5 mr-2 shrink-0">
-                <Filter size={12} /> 난이도 정렬:
+              <span className="text-xs sm:text-sm text-[#20182c] flex items-center gap-1.5 mr-2 shrink-0 font-black">
+                <Filter size={14} /> 난이도 정렬:
               </span>
               {(["전체", "하", "중하", "중", "중상", "상", "최상"] as const).map((diff) => (
                 <button
                   key={diff}
-                  className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg transition-all ${
+                  className={`px-3 py-1.5 text-xs font-black rounded-lg transition-all ${
                     zoneDiffFilter === diff
-                      ? "bg-gradient-to-r from-[#fce289] to-[#e6b94d] text-[#120a22] font-bold shadow-sm"
-                      : "text-white/60 hover:text-white hover:bg-white/5 border border-transparent"
+                      ? "bg-gradient-to-r from-[#ffe082] to-[#f5be38] text-[#1e1302] font-black shadow-xs border border-amber-300"
+                      : "text-[#20182c] hover:text-[#110e17] hover:bg-amber-100 border border-transparent"
                   }`}
                   onClick={() => setZoneDiffFilter(diff)}
                   id={`filter-diff-${diff}`}
@@ -1016,17 +1016,17 @@ export default function App() {
             </div>
           </div>
 
-          {/* Zones Grid */}
+          {/* Zones Grid (Bright Theme) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="zones-grid">
             <AnimatePresence mode="popLayout">
               {filteredZones.map((zone, i) => {
                 const diffBadgeColors: Record<string, string> = {
-                  하: "bg-emerald-500/20 text-emerald-200 border-emerald-400/40",
-                  중하: "bg-lime-500/20 text-lime-200 border-lime-400/40",
-                  중: "bg-amber-500/20 text-amber-200 border-amber-400/40",
-                  중상: "bg-orange-500/20 text-orange-200 border-orange-400/40",
-                  상: "bg-red-500/20 text-red-200 border-red-400/40",
-                  최상: "bg-fuchsia-500/20 text-fuchsia-200 border-fuchsia-400/40",
+                  하: "bg-emerald-100 text-emerald-950 border-emerald-300 font-black",
+                  중하: "bg-lime-100 text-lime-950 border-lime-300 font-black",
+                  중: "bg-amber-100 text-amber-950 border-amber-300 font-black",
+                  중상: "bg-orange-100 text-orange-950 border-orange-300 font-black",
+                  상: "bg-rose-100 text-rose-950 border-rose-300 font-black",
+                  최상: "bg-purple-100 text-purple-950 border-purple-300 font-black",
                 };
 
                 return (
@@ -1037,29 +1037,26 @@ export default function App() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
                     key={zone.name}
-                    className={`rounded-2xl border ${zone.border} p-6 transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-xl`}
-                    style={{
-                      background: `linear-gradient(to bottom, ${zone.bgGlow}, rgba(22, 15, 43, 0.95))`
-                    }}
+                    className="rounded-2xl border-2 border-amber-200/90 bg-white p-6 transition-all duration-300 flex flex-col justify-between shadow-md shadow-amber-900/5 hover:shadow-xl hover:border-amber-400"
                     id={`zone-card-${i}`}
                   >
                     <div>
                       <div className="flex items-start justify-between gap-3 mb-4">
                         <div>
-                          <h3 className={`font-bold text-base ${zone.color}`} style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                          <h3 className="font-black text-lg text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                             {zone.name}
                           </h3>
-                          <div className="flex items-center gap-1.5 mt-1 font-mono text-[11px] text-white/50">
+                          <div className="flex items-center gap-1.5 mt-1 font-mono text-xs text-[#20182c]">
                             <span>권장 레벨:</span>
-                            <span className="text-amber-200 font-bold">{zone.level}</span>
+                            <span className="text-amber-900 font-black">{zone.level}</span>
                           </div>
                         </div>
-                        <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${diffBadgeColors[zone.difficulty]}`}>
+                        <span className={`text-[10px] sm:text-xs font-black px-3 py-1 rounded-full border ${diffBadgeColors[zone.difficulty]}`}>
                           난이도 {zone.difficulty}
                         </span>
                       </div>
 
-                      <p className="text-xs text-white/75 leading-relaxed font-light">
+                      <p className="text-xs sm:text-sm text-[#20182c] leading-relaxed font-bold">
                         {zone.desc}
                       </p>
                     </div>
@@ -1070,97 +1067,95 @@ export default function App() {
           </div>
 
           {filteredZones.length === 0 && (
-            <div className="text-center py-16 bg-[#160f2e]/60 rounded-2xl border border-white/10 mt-4">
-              <Info className="mx-auto text-white/30 mb-3" size={24} />
-              <p className="text-sm text-white/50">일치하는 사냥터 정보가 없습니다. 다른 검색어를 이용해보세요.</p>
+            <div className="text-center py-16 bg-white rounded-2xl border-2 border-amber-200 mt-4 shadow-sm">
+              <Info className="mx-auto text-amber-700/60 mb-3" size={28} />
+              <p className="text-base text-[#20182c] font-black">일치하는 사냥터 정보가 없습니다. 다른 검색어를 이용해보세요.</p>
             </div>
           )}
         </div>
       </section>
 
-      {/* ─── DOWNLOAD SECTION ─── */}
-      <section id="download" className="py-24 border-y border-white/5 bg-[#100a20] relative z-10" md-id="download-section">
+      {/* ─── DOWNLOAD SECTION (BRIGHT) ─── */}
+      <section id="download" className="py-24 border-y border-amber-200/70 bg-[#f7f4eb] relative z-10" md-id="download-section">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-widest text-[#e6b94d] font-mono uppercase mb-2">Client Download</p>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#fdf8ed]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+            <p className="text-xs tracking-widest text-amber-800 font-mono uppercase mb-2 font-black">Client Download Schedule</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               클라이언트 다운로드 안내
             </h2>
-            <div className="mt-3 mx-auto w-20 h-0.5 bg-gradient-to-r from-transparent via-[#e6b94d] to-transparent" />
-            <p className="text-white/70 text-sm mt-3 font-light">
-              안전하고 확실한 클라이언트 파일을 배포 준비 중입니다. 
-              원활한 게임 접속을 위해 보안 프로그램 백신 가이드를 사전에 확인 부탁드립니다.
+            <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
+            <p className="text-[#20182c] text-sm sm:text-base mt-3 font-bold max-w-xl mx-auto">
+              현재 클라이언트 최종 안정화 점검 및 패치 패키징을 진행하고 있습니다. 
+              9월 10일 공식 다운로드 링크가 오픈되며, 9월 11일 19시 정식 오픈 전 미리 설치하실 수 있습니다.
             </p>
-            <div className="mt-4 inline-flex items-center gap-2 bg-amber-500/20 border border-amber-300/50 rounded-xl px-5 py-2.5 text-xs text-amber-200 font-bold shadow-lg">
-              <Calendar size={15} className="shrink-0 text-amber-300" />
-              <span>8월 31~9월1일 다운로드 가능</span>
+            <div className="mt-4 inline-flex items-center gap-2.5 bg-amber-100 border-2 border-amber-400 rounded-xl px-6 py-3 text-sm sm:text-base text-amber-950 font-black shadow-sm">
+              <Calendar size={20} className="shrink-0 text-amber-800" />
+              <span>9월 10일 다운로드가능 (9월 11일 19시 정식 오픈)</span>
             </div>
           </div>
 
-          <div className="grid gap-3.5 mb-10" id="download-actions-list">
-            {DOWNLOAD_LINKS.map((dl, i) => (
-              <a
-                key={i}
-                href={dl.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-5 rounded-2xl border border-amber-300/40 bg-gradient-to-r from-amber-500/15 via-yellow-400/5 to-[#160f2d] text-left group gap-4 relative overflow-hidden shadow-xl hover:border-amber-300/80 hover:brightness-105 transition-all"
-                id={`download-link-btn-${i}`}
-              >
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-amber-400/20 border border-amber-300/30 flex items-center justify-center shrink-0 text-amber-300 group-hover:scale-110 transition-transform">
-                    <Download size={20} />
-                  </div>
-                  <div>
-                    <span className="font-bold text-base text-white/95 block group-hover:text-amber-200 transition-colors">
-                      {dl.label}
+          <div className="mb-10" id="download-actions-list">
+            <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-6 sm:p-8 rounded-2xl border-2 border-amber-300 bg-white text-left relative overflow-hidden shadow-md shadow-amber-900/5 gap-6">
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center shrink-0 text-amber-900 shadow-xs">
+                  <Calendar size={28} />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-black text-lg sm:text-xl text-[#110e17]">
+                      황혼서버 클라이언트 배포 예정
                     </span>
-                    <span className="text-xs text-amber-200/80 block mt-0.5 font-mono">다운로드 방식: {dl.speed} ({dl.size})</span>
+                    <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-amber-200 text-amber-950 border border-amber-400">
+                      오픈 예정
+                    </span>
                   </div>
+                  <p className="text-sm text-[#20182c] font-bold mt-1">
+                    9월 10일에 초고속 구글 드라이브 다운로드 링크가 공개됩니다.
+                  </p>
                 </div>
-                <div className="flex items-center gap-3 relative z-10 self-end sm:self-center">
-                  <span className="text-xs font-bold text-amber-950 bg-gradient-to-r from-[#fce289] to-[#e6b94d] border border-amber-200/60 px-5 py-2.5 rounded-xl shadow-md flex items-center gap-1.5 group-hover:brightness-110 transition-all">
-                    <Download size={14} />
-                    다운로드 바로가기
-                  </span>
+              </div>
+              <div className="flex items-center gap-3 relative z-10 shrink-0">
+                <div className="text-center sm:text-right px-6 py-3 rounded-xl bg-gradient-to-r from-amber-100 via-yellow-100 to-amber-100 border-2 border-amber-400 shadow-xs">
+                  <p className="text-xs font-mono font-black text-amber-900 uppercase">Release Schedule</p>
+                  <p className="text-base sm:text-lg font-black text-amber-950">9월 10일 다운로드가능</p>
                 </div>
-              </a>
-            ))}
+              </div>
+            </div>
           </div>
 
           {/* Step Instructions */}
-          <div className="bg-[#17102e] border border-amber-300/20 rounded-2xl p-6 relative overflow-hidden shadow-lg">
-            <h3 className="text-sm font-bold text-amber-300 mb-4 flex items-center gap-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-              <Info size={15} /> 필수 게임 접속 절차 안내
+          <div className="bg-white border-2 border-amber-200 rounded-2xl p-6 relative overflow-hidden shadow-md shadow-amber-900/5">
+            <h3 className="text-base font-black text-amber-950 mb-4 flex items-center gap-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+              <Info size={18} className="text-amber-800" /> 필수 게임 접속 절차 안내
             </h3>
             
-            <div className="grid gap-4 text-xs text-white/70">
+            <div className="grid gap-4 text-xs sm:text-sm text-[#20182c]">
               <div className="flex gap-3.5 items-start">
-                <span className="w-5 h-5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-300/30 flex items-center justify-center font-mono font-bold text-[10px] shrink-0 mt-0.5">1</span>
+                <span className="w-6 h-6 rounded-full bg-amber-100 text-amber-950 border border-amber-300 flex items-center justify-center font-mono font-black text-xs shrink-0 mt-0.5">1</span>
                 <div>
-                  <p className="font-bold text-white/95">클라이언트 압축 해제</p>
-                  <p className="mt-0.5 font-light">초고속 드라이브를 통해 알집 혹은 반디집으로 바탕화면에 압축을 완벽히 풉니다.</p>
+                  <p className="font-black text-sm sm:text-base text-[#110e17]">클라이언트 압축 해제</p>
+                  <p className="mt-0.5 font-bold text-[#342747]">초고속 드라이브를 통해 알집 혹은 반디집으로 바탕화면에 압축을 완벽히 풉니다.</p>
                 </div>
               </div>
               <div className="flex gap-3.5 items-start">
-                <span className="w-5 h-5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-300/30 flex items-center justify-center font-mono font-bold text-[10px] shrink-0 mt-0.5">2</span>
+                <span className="w-6 h-6 rounded-full bg-amber-100 text-amber-950 border border-amber-300 flex items-center justify-center font-mono font-black text-xs shrink-0 mt-0.5">2</span>
                 <div>
-                  <p className="font-bold text-white/95">백신 예외 등록 (중요)</p>
-                  <p className="mt-0.5 font-light">윈도우 디펜더 등 백신이 오인하여 파일 차단하는 것을 막기 위해 사전에 설치 폴더 전체를 백신 예외 리스트에 등록하십시오.</p>
+                  <p className="font-black text-sm sm:text-base text-[#110e17]">백신 예외 등록 (중요)</p>
+                  <p className="mt-0.5 font-bold text-[#342747]">윈도우 디펜더 등 백신이 오인하여 파일 차단하는 것을 막기 위해 사전에 설치 폴더 전체를 백신 예외 리스트에 등록하십시오.</p>
                 </div>
               </div>
               <div className="flex gap-3.5 items-start">
-                <span className="w-5 h-5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-300/30 flex items-center justify-center font-mono font-bold text-[10px] shrink-0 mt-0.5">3</span>
+                <span className="w-6 h-6 rounded-full bg-amber-100 text-amber-950 border border-amber-300 flex items-center justify-center font-mono font-black text-xs shrink-0 mt-0.5">3</span>
                 <div>
-                  <p className="font-bold text-white/95">최신 패치 수동 적용</p>
-                  <p className="mt-0.5 font-light">수동 통합 패치 파일을 복사하여 기존 압축 해제한 설치 폴더에 그대로 덮어씌웁니다.</p>
+                  <p className="font-black text-sm sm:text-base text-[#110e17]">최신 패치 수동 적용</p>
+                  <p className="mt-0.5 font-bold text-[#342747]">수동 통합 패치 파일을 복사하여 기존 압축 해제한 설치 폴더에 그대로 덮어씌웁니다.</p>
                 </div>
               </div>
               <div className="flex gap-3.5 items-start">
-                <span className="w-5 h-5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-300/30 flex items-center justify-center font-mono font-bold text-[10px] shrink-0 mt-0.5">4</span>
+                <span className="w-6 h-6 rounded-full bg-amber-100 text-amber-950 border border-amber-300 flex items-center justify-center font-mono font-black text-xs shrink-0 mt-0.5">4</span>
                 <div>
-                  <p className="font-bold text-white/95">HwanghonLauncher.exe 실행</p>
-                  <p className="mt-0.5 font-light">관리자 권한으로 런처를 가동하여 로그인 후 전장으로 이동하시면 모든 준비가 끝납니다.</p>
+                  <p className="font-black text-sm sm:text-base text-[#110e17]">HwanghonLauncher.exe 실행</p>
+                  <p className="mt-0.5 font-bold text-[#342747]">관리자 권한으로 런처를 가동하여 로그인 후 전장으로 이동하시면 모든 준비가 끝납니다.</p>
                 </div>
               </div>
             </div>
@@ -1168,28 +1163,28 @@ export default function App() {
         </div>
       </section>
 
-      {/* ─── COMMUNITY SECTION ─── */}
-      <section id="community" className="py-24 border-t border-white/5 bg-[#120c24] relative z-10" md-id="community-section">
+      {/* ─── COMMUNITY SECTION (DIRECT TELEGRAM @Twilighthwanghon) ─── */}
+      <section id="community" className="py-24 border-t border-amber-200/70 bg-[#fcfaf5] relative z-10" md-id="community-section">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-xs tracking-widest text-[#e6b94d] font-mono uppercase mb-2">Share the Adventure</p>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#fdf8ed]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-            활성화된 동료들 커뮤니티
+          <p className="text-xs tracking-widest text-amber-800 font-mono uppercase mb-2 font-black">Share the Adventure</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+            운영자 1:1 개인 텔레그램
           </h2>
-          <div className="mt-3 mx-auto w-20 h-0.5 bg-gradient-to-r from-transparent via-[#e6b94d] to-transparent" />
-          <p className="text-white/70 text-sm mt-3 max-w-lg mx-auto font-light">
-            매시간 유저 교류 및 거래가 이루어집니다. 파티 매칭 및 각종 공략 정보를 한 눈에 공유하십시오.
+          <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
+          <p className="text-[#20182c] text-sm sm:text-base mt-3 max-w-xl mx-auto font-bold">
+            혈원 10명 단체지원 신청, 홍보인증 스크린샷 접수 및 기타 모든 서버 문의는 운영자 개인 텔레그램으로 언제든 연락주세요.
           </p>
 
           <div className="max-w-md mx-auto mt-10" id="community-links-grid">
             {[
               {
-                label: "공식 텔레그램 채널",
-                sub: "실시간 소식 및 이벤트 소통",
-                icon: <Send size={24} />,
-                color: "hover:border-sky-300 hover:bg-[#1a1434]",
-                bg: "rgba(0,136,204,0.06)",
-                accent: "text-sky-300",
-                url: "https://t.me/+gXAtzqiPDINhNzBi"
+                label: "운영자 개인 텔레그램 바로가기",
+                sub: "@Twilighthwanghon (단체지원 / 문의 / 홍보인증)",
+                icon: <Send size={28} />,
+                color: "hover:border-sky-400 hover:shadow-xl",
+                bg: "bg-white",
+                accent: "text-sky-700",
+                url: "https://t.me/Twilighthwanghon"
               },
             ].map((comm, i) => (
               <a
@@ -1197,79 +1192,81 @@ export default function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={i}
-                className={`rounded-2xl border border-sky-400/30 p-6 flex flex-col items-center text-center transition-all duration-300 relative overflow-hidden group hover:-translate-y-1 shadow-xl ${comm.color}`}
-                style={{ background: comm.bg }}
+                className={`rounded-2xl border-2 border-sky-300 p-7 flex flex-col items-center text-center transition-all duration-300 relative overflow-hidden group hover:-translate-y-1 shadow-md ${comm.bg} ${comm.color}`}
                 id={`community-btn-${i}`}
               >
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 bg-sky-400/20 ${comm.accent} border border-sky-300/30 transition-transform group-hover:scale-110 shadow-md`}>
+                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 bg-sky-100 ${comm.accent} border-2 border-sky-300 transition-transform group-hover:scale-110 shadow-xs`}>
                   {comm.icon}
                 </div>
-                <h4 className="font-bold text-base text-[#fdf8ed] mb-1">{comm.label}</h4>
-                <p className="text-xs text-white/60">{comm.sub}</p>
+                <h4 className="font-black text-lg sm:text-xl text-[#110e17] mb-1">{comm.label}</h4>
+                <p className="text-sm text-sky-900 font-black">{comm.sub}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-xs sm:text-sm font-black text-sky-700 group-hover:underline">
+                  텔레그램 메시지 보내기 <ExternalLink size={14} />
+                </span>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── PROMOTIONAL COPY AREA ─── */}
-      <section className="py-16 border-y border-amber-300/20 bg-gradient-to-b from-amber-500/10 to-[#100a20] relative z-10" md-id="promotional-section">
+      {/* ─── PROMOTIONAL COPY AREA (BRIGHT) ─── */}
+      <section className="py-16 border-y border-amber-200/70 bg-gradient-to-b from-amber-100/50 via-[#ffffff] to-[#fcfaf5] relative z-10" md-id="promotional-section">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-xs text-[#e6b94d] tracking-widest font-mono uppercase mb-2">Viral Promotion Project</p>
-          <h2 className="text-xl sm:text-2xl font-black text-[#fdf8ed] mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+          <p className="text-xs text-amber-800 tracking-widest font-mono uppercase mb-2 font-black">Viral Promotion Project</p>
+          <h2 className="text-2xl sm:text-3xl font-black text-[#110e17] mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>
             서버 홍보 이벤트 참여
           </h2>
-          <div className="text-xs sm:text-sm text-white/80 leading-relaxed mb-8 max-w-xl mx-auto space-y-4 text-center">
-            <p className="text-white/70 font-light">
+          <div className="text-xs sm:text-sm text-[#20182c] leading-relaxed mb-8 max-w-xl mx-auto space-y-4 text-center">
+            <p className="font-bold">
               아래의 홍보 문구를 복사하여 게임 커뮤니티 사이트에 각 홈페이지당 1개, 5군데에 기재하여 주십시오. 
-              홍보내용을 캡쳐, 스크린샷하여 텔레그램으로 보내주시면 확인 후 홍보보상상자를 하루 1개 지급합니다.
+              홍보내용을 캡쳐, 스크린샷하여 개인 텔레그램(@Twilighthwanghon)으로 보내주시면 확인 후 홍보보상상자를 하루 1개 지급합니다.
             </p>
-            <p className="font-bold text-amber-300 text-xs sm:text-sm">
+            <p className="font-black text-amber-950 text-sm sm:text-base">
               커뮤니티사이트 5개 홍보 → 홍보보상상자
             </p>
 
-            <div className="bg-[#1a1236] border border-amber-300/30 rounded-2xl p-4 text-center text-xs space-y-2 backdrop-blur-sm shadow-md">
-              <p className="text-white/90 leading-relaxed">
-                하루에 사이트 5곳에 홍보하시고 운영자에게 개인텔레로 스크린샷을 보내주시면 확인 후 <span className="text-[#fce289] font-bold">홍보보상상자</span>를 지급해드립니다.
+            <div className="bg-amber-100 border-2 border-amber-300 rounded-2xl p-5 text-center text-xs sm:text-sm space-y-2 shadow-xs">
+              <p className="text-amber-950 font-black leading-relaxed">
+                하루에 사이트 5곳에 홍보하시고 운영자에게 개인텔레(@Twilighthwanghon)로 스크린샷을 보내주시면 확인 후 <span className="text-amber-800 font-black underline decoration-amber-500 decoration-2">홍보보상상자</span>를 지급해드립니다.
               </p>
             </div>
           </div>
 
-          <div className="bg-[#0b0717] rounded-2xl border border-amber-300/30 p-5 text-left max-w-2xl mx-auto mb-6 relative group shadow-2xl">
+          <div className="bg-white rounded-2xl border-2 border-amber-300 p-5 text-left max-w-2xl mx-auto mb-6 relative group shadow-lg">
             <button
               onClick={handleCopyPromo}
-              className="absolute top-4 right-4 flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#fce289] to-[#e6b94d] text-[#120a22] text-xs font-bold transition-all hover:brightness-110 active:scale-95 shadow-md shadow-amber-500/20 cursor-pointer"
+              className="absolute top-4 right-4 flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-[#ffe082] to-[#f5be38] text-[#1e1302] text-xs sm:text-sm font-black transition-all hover:brightness-105 active:scale-95 shadow-md shadow-amber-500/20 cursor-pointer border border-amber-400"
               id="copy-promo-btn"
             >
               {copied ? (
                 <>
-                  <Check size={13} className="text-[#120a22]" />
+                  <Check size={15} className="text-[#1e1302]" />
                   <span>복사 완료!</span>
                 </>
               ) : (
                 <>
-                  <Copy size={13} />
+                  <Copy size={15} />
                   <span>텍스트 복사</span>
                 </>
               )}
             </button>
-            <pre className="text-[11px] sm:text-xs text-white/70 font-mono leading-relaxed max-h-72 overflow-y-auto whitespace-pre-wrap pr-16 select-all font-light">
+            <pre className="text-xs sm:text-sm text-[#110e17] font-mono leading-relaxed max-h-72 overflow-y-auto whitespace-pre-wrap pr-20 select-all font-bold">
               {promoText}
             </pre>
           </div>
           
-          <p className="text-[10px] text-white/50">
+          <p className="text-xs text-[#55466b] font-bold">
             * 복사 버튼 클릭 시 클립보드에 자동으로 복사되어 즉시 붙여넣을 수 있습니다.
           </p>
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer className="border-t border-white/5 py-12 bg-[#0a0614] relative z-10" md-id="footer-section">
+      {/* ─── FOOTER (BRIGHT) ─── */}
+      <footer className="border-t border-amber-200/70 py-12 bg-[#f4efe4] relative z-10" md-id="footer-section">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-white/5">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-amber-200/80">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full overflow-hidden border border-amber-300/40">
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-amber-400 bg-amber-50">
                 <img
                   src={twilightLogo}
                   alt="황혼서버 Logo"
@@ -1278,30 +1275,30 @@ export default function App() {
                 />
               </div>
               <div className="text-left">
-                <p className="text-[#fdf8ed] font-black tracking-widest text-sm" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                <p className="text-[#110e17] font-black tracking-widest text-base" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                   황혼서버
                 </p>
-                <p className="text-amber-200/50 text-[10px] uppercase font-mono tracking-wider">Classic Twilight Server</p>
+                <p className="text-amber-900 text-xs uppercase font-mono tracking-wider font-black">Classic Twilight Server</p>
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-5 text-xs text-white/60">
+            <div className="flex flex-wrap justify-center gap-6 text-xs sm:text-sm text-[#20182c] font-black">
               {NAV_LINKS.map((link) => (
-                <a key={link.href} href={link.href} className="hover:text-amber-300 transition-colors">
+                <a key={link.href} href={link.href} className="hover:text-amber-900 transition-colors">
                   {link.label}
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="mt-8 text-center text-white/40 text-[11px] leading-relaxed max-w-2xl mx-auto font-light">
+          <div className="mt-8 text-center text-[#342747] text-xs leading-relaxed max-w-2xl mx-auto font-bold">
             <p className="mb-2">
               본 황혼서버는 비공식 클래식 판타지 팬 프리 커뮤니티로서 원작 상표권 소유 게임 기업의 지식재산권(IP)을 존중합니다.
             </p>
             <p className="mb-4">
               어떠한 영리적 이익 창출 및 불법적 상거래를 지지하지 않는 교육 연구용 테스트 환경입니다.
             </p>
-            <p className="font-mono tracking-wider text-amber-200/40">
+            <p className="font-mono tracking-wider text-amber-950 font-black">
               © 2026 황혼서버 개발단. All rights reserved.
             </p>
           </div>
@@ -1310,3 +1307,4 @@ export default function App() {
     </div>
   );
 }
+
