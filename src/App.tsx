@@ -322,8 +322,8 @@ const NOTICES: Notice[] = [
   {
     date: "2026.09.11",
     tag: "공지",
-    title: "황혼서버 9월 11일(금) 19시 정식 오픈 안내",
-    content: "9월 11일 19시 정식 오픈합니다! (오대기 없음)\n\n혈원 10명 달성 시 단체지원(6검4셋+인형주머니) 등 풍성한 혜택이 준비되어 있습니다.\n문의 및 단체지원 신청은 운영자 개인 텔레그램(@Twilighthwanghon)으로 연락 부탁드립니다."
+    title: "황혼서버 9월 11일(금) 정식 오픈 안내 (19시 오대기 / 20시 오픈)",
+    content: "9월 11일 정식 오픈! 19시 오대기 20시 오픈!!!\n\n혈원 10명 달성 시 단체지원(6검4셋+인형주머니) 등 풍성한 혜택이 준비되어 있습니다.\n문의 및 단체지원 신청은 운영자 개인 텔레그램(@Twilighthwanghon)으로 연락 부탁드립니다."
   },
 ];
 
@@ -379,7 +379,7 @@ export default function App() {
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text
-  const promoText = `2.0하자 황혼서버 9월 11일 19시 정식 오픈 (오대기 없음)
+  const promoText = `2.0하자 황혼서버 9월 11일 정식 오픈! 19시 오대기 20시 오픈!!!
 
 
  ** 중요** 빡센 농사꾼이 될 자신이 없다면 오지마세요
@@ -572,7 +572,7 @@ export default function App() {
             className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border-2 border-amber-400/90 bg-gradient-to-r from-amber-100 via-yellow-50 to-amber-100 text-sm sm:text-base font-extrabold text-amber-950 mb-6 shadow-md shadow-amber-500/15 backdrop-blur-sm"
           >
             <Sparkles size={18} className="text-amber-600 animate-spin shrink-0" style={{ animationDuration: '8s' }} />
-            <span className="font-mono tracking-wide">9월 11일 19시 정식 오픈! (오대기 없음)</span>
+            <span className="font-mono tracking-wide">9월 11일 정식 오픈! 19시 오대기 20시 오픈!!!</span>
           </motion.div>
 
           <motion.h1
@@ -1086,11 +1086,11 @@ export default function App() {
             <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
             <p className="text-[#20182c] text-sm sm:text-base mt-3 font-bold max-w-xl mx-auto">
               현재 클라이언트 최종 안정화 점검 및 패치 패키징을 진행하고 있습니다. 
-              9월 10일 공식 다운로드 링크가 오픈되며, 9월 11일 19시 정식 오픈 전 미리 설치하실 수 있습니다.
+              9월 10일 공식 다운로드 링크가 오픈되며, 9월 11일 정식 오픈(19시 오대기, 20시 오픈) 전 미리 설치하실 수 있습니다.
             </p>
             <div className="mt-4 inline-flex items-center gap-2.5 bg-amber-100 border-2 border-amber-400 rounded-xl px-6 py-3 text-sm sm:text-base text-amber-950 font-black shadow-sm">
               <Calendar size={20} className="shrink-0 text-amber-800" />
-              <span>9월 10일 다운로드가능 (9월 11일 19시 정식 오픈)</span>
+              <span>9월 10일 다운로드가능 (9월 11일 정식 오픈! 19시 오대기 20시 오픈)</span>
             </div>
           </div>
 
