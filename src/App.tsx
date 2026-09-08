@@ -161,6 +161,12 @@ const CLASSES: ClassInfo[] = [
 
 const FEATURES = [
   {
+    icon: <Coins size={24} />,
+    title: "고급아데나상점",
+    desc: "주요장비 및 기타템 순수 아데나로 판매",
+    badge: "시그니처"
+  },
+  {
     icon: <Sparkles size={24} />,
     title: "자동사냥 & 편의 시스템",
     desc: "칼렉, 길렉 개선 및 편리한 자동사냥 지원\n(손사냥이 더욱 높은 효율을 내도록 설계)",
@@ -185,12 +191,6 @@ const FEATURES = [
     badge: "경쟁"
   },
   {
-    icon: <Map size={24} />,
-    title: "특화 던전 분리",
-    desc: "던전별 초반 아이템 드랍\n(상아탑 6층 - 무기, 얼음던전 - 방어구)",
-    badge: "컨텐츠"
-  },
-  {
     icon: <Users size={24} />,
     title: "혈맹 시스템",
     desc: "혈맹원을 모으고, 혈맹원들과 함께 보스를 토벌하세요.",
@@ -209,15 +209,6 @@ const HUNTING_ZONES: HuntingZone[] = [
     bgGlow: "rgba(16,185,129,0.06)"
   },
   {
-    name: "엘모어의 밭",
-    level: "20 ~ 45",
-    difficulty: "중하",
-    desc: "본격적인 모험이 시작, 엘모어들을 사냥하며 필수템들을 득템하세.",
-    color: "text-lime-300",
-    border: "border-lime-500/30 hover:border-lime-400/60",
-    bgGlow: "rgba(132,204,22,0.06)"
-  },
-  {
     name: "용의 계곡",
     level: "30 ~ 50",
     difficulty: "중",
@@ -225,24 +216,6 @@ const HUNTING_ZONES: HuntingZone[] = [
     color: "text-amber-300",
     border: "border-amber-500/30 hover:border-amber-400/60",
     bgGlow: "rgba(245,158,11,0.06)"
-  },
-  {
-    name: "악마왕의 영토",
-    level: "40 ~",
-    difficulty: "중",
-    desc: "스탯티셔츠 파밍 던전, 중급자들의 필수 사냥터",
-    color: "text-rose-300",
-    border: "border-rose-500/30 hover:border-rose-400/60",
-    bgGlow: "rgba(244,63,94,0.06)"
-  },
-  {
-    name: "정령의 무덤",
-    level: "렙제없음",
-    difficulty: "중상",
-    desc: "스탯반지 파밍 던전, 레벨 제한 없이 입장 가능한 기회의 땅",
-    color: "text-emerald-300",
-    border: "border-emerald-500/30 hover:border-emerald-400/60",
-    bgGlow: "rgba(16,185,129,0.06)"
   },
   {
     name: "버려진 땅",
@@ -254,6 +227,42 @@ const HUNTING_ZONES: HuntingZone[] = [
     bgGlow: "rgba(245,158,11,0.06)"
   },
   {
+    name: "기란던전 1층",
+    level: "45 ~",
+    difficulty: "중",
+    desc: "스탯부츠, 무기/인형옵션부여주문서",
+    color: "text-amber-300",
+    border: "border-amber-500/30 hover:border-amber-400/60",
+    bgGlow: "rgba(245,158,11,0.06)"
+  },
+  {
+    name: "기란던전 2층",
+    level: "48 ~",
+    difficulty: "중",
+    desc: "금날/은날",
+    color: "text-amber-300",
+    border: "border-amber-500/30 hover:border-amber-400/60",
+    bgGlow: "rgba(245,158,11,0.06)"
+  },
+  {
+    name: "기란던전 3층",
+    level: "50 ~",
+    difficulty: "중상",
+    desc: "축오림무기/갑옷주문서",
+    color: "text-orange-300",
+    border: "border-orange-500/30 hover:border-orange-400/60",
+    bgGlow: "rgba(249,115,22,0.06)"
+  },
+  {
+    name: "기란던전 4층",
+    level: "52 ~",
+    difficulty: "상",
+    desc: "2차무기(진싸울아비대검, 진레이피어, 강마나, 달의장궁)",
+    color: "text-rose-300",
+    border: "border-rose-500/30 hover:border-rose-400/60",
+    bgGlow: "rgba(244,63,94,0.06)"
+  },
+  {
     name: "잊혀진섬",
     level: "45 ~",
     difficulty: "중상",
@@ -261,15 +270,6 @@ const HUNTING_ZONES: HuntingZone[] = [
     color: "text-orange-300",
     border: "border-orange-500/30 hover:border-orange-400/60",
     bgGlow: "rgba(249,115,22,0.06)"
-  },
-  {
-    name: "기란던전",
-    level: "50 ~",
-    difficulty: "중상",
-    desc: "엘릭서와 같은 필수템들 드랍",
-    color: "text-fuchsia-300",
-    border: "border-fuchsia-500/30 hover:border-fuchsia-400/60",
-    bgGlow: "rgba(217,70,239,0.06)"
   },
   {
     name: "오만의탑",
@@ -288,15 +288,6 @@ const HUNTING_ZONES: HuntingZone[] = [
     color: "text-purple-300",
     border: "border-purple-500/30 hover:border-purple-400/60",
     bgGlow: "rgba(168,85,247,0.06)"
-  },
-  {
-    name: "칠흑의던전",
-    level: "52 ~",
-    difficulty: "최상",
-    desc: "시간던전, 몹이 굉장히 강함, 1마리도 잡기 힘듦",
-    color: "text-violet-300",
-    border: "border-violet-500/30 hover:border-violet-400/60",
-    bgGlow: "rgba(139,92,246,0.06)"
   },
 ];
 
