@@ -41,6 +41,8 @@ import charFemaleMage from "./assets/images/char_female_mage_1787297824479.jpg";
 import charPrinceKnight from "./assets/images/char_prince_knight_1787300975262.jpg";
 // @ts-ignore
 import charFemaleKnight from "./assets/images/char_female_knight_1787300989342.jpg";
+// @ts-ignore
+import downloadGuideImg from "./assets/images/filekiwi_download_guide.svg";
 
 // Types
 interface Notice {
@@ -1088,39 +1090,56 @@ export default function App() {
 
           <div className="mb-10 space-y-4" id="download-actions-list">
             {DOWNLOAD_LINKS.map((link, idx) => (
-              <div
-                key={idx}
-                className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-6 sm:p-8 rounded-2xl border-2 border-amber-300 bg-white text-left relative overflow-hidden shadow-md shadow-amber-900/5 gap-6 hover:border-amber-400 transition-all"
-              >
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center shrink-0 text-amber-900 shadow-xs">
-                    <Download size={28} />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-black text-lg sm:text-xl text-[#110e17]">
-                        {link.label}
-                      </span>
-                      <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-950 border border-emerald-300">
-                        {link.availability}
-                      </span>
+              <div key={idx} className="space-y-4">
+                <div
+                  className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-6 sm:p-8 rounded-2xl border-2 border-amber-300 bg-white text-left relative overflow-hidden shadow-md shadow-amber-900/5 gap-6 hover:border-amber-400 transition-all"
+                >
+                  <div className="flex items-center gap-4 relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center shrink-0 text-amber-900 shadow-xs">
+                      <Download size={28} />
                     </div>
-                    <p className="text-sm text-[#20182c] font-bold mt-1">
-                      {link.speed} • 파일 용량: {link.size}
-                    </p>
+                    <div>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-black text-lg sm:text-xl text-[#110e17]">
+                          {link.label}
+                        </span>
+                        <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-950 border border-emerald-300">
+                          {link.availability}
+                        </span>
+                      </div>
+                      <p className="text-sm text-[#20182c] font-bold mt-1">
+                        {link.speed} • 파일 용량: {link.size}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 relative z-10 shrink-0">
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-black text-sm sm:text-base text-[#1e1302] bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] border-2 border-amber-400 shadow-md shadow-amber-500/20 hover:brightness-105 active:scale-95 transition-all"
+                    >
+                      <Download size={18} />
+                      다운로드 받기
+                      <ExternalLink size={15} className="opacity-70" />
+                    </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 relative z-10 shrink-0">
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-black text-sm sm:text-base text-[#1e1302] bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] border-2 border-amber-400 shadow-md shadow-amber-500/20 hover:brightness-105 active:scale-95 transition-all"
-                  >
-                    <Download size={18} />
-                    다운로드 받기
-                    <ExternalLink size={15} className="opacity-70" />
-                  </a>
+
+                {/* Download Guide Image & Instruction */}
+                <div className="p-5 sm:p-6 bg-white border-2 border-amber-200/90 rounded-2xl shadow-sm text-center">
+                  <div className="max-w-xl mx-auto rounded-xl overflow-hidden border border-slate-200 bg-white p-2 sm:p-3 shadow-xs">
+                    <img
+                      src={downloadGuideImg}
+                      alt="다운로드 진행 아이콘 안내"
+                      className="w-full h-auto object-contain mx-auto"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <p className="mt-3.5 text-sm sm:text-base font-black text-amber-950 flex items-center justify-center gap-2">
+                    <span className="text-rose-600 font-black">💡</span>
+                    <span>화면 오른쪽의 이 아이콘을 클릭하시면 다운로드가 진행됩니다.</span>
+                  </p>
                 </div>
               </div>
             ))}
