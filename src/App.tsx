@@ -293,11 +293,11 @@ const HUNTING_ZONES: HuntingZone[] = [
 
 const DOWNLOAD_LINKS = [
   {
-    label: "클라이언트 종합 다운로드 (구글 드라이브)",
-    url: "https://drive.google.com/file/d/100LOml-lIVLI_U-HAWc9cGLEamhjf8nZ/view",
+    label: "클라이언트 종합 다운로드",
+    url: "https://file.kiwi/5fe30632#d6i2T7dvhlC0xtDIVuDxew",
     size: "2.3 GB",
     primary: true,
-    speed: "초고속 구글 드라이브",
+    speed: "초고속 클라우드 다운로드",
     availability: "즉시 다운로드 가능"
   },
 ];
