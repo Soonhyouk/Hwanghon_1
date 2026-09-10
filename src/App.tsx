@@ -411,6 +411,7 @@ export default function App() {
  황혼서버만의 다양한 콘텐츠와 시스템을 지속적으로 업데이트합니다.
 
 개인 텔레그램  :  https://t.me/Twilighthwanghon (@Twilighthwanghon)
+(문제, 버그, 개선사항이 있으신 경우 부담없이 텔레그램으로 말씀해주시면 최대한 소통하겠습니다.)
 
 홈페이지 :  https://twilighthwanghon.netlify.app`;
 
@@ -1176,6 +1177,10 @@ export default function App() {
           <p className="text-[#20182c] text-sm sm:text-base mt-3 max-w-xl mx-auto font-bold">
             혈원 10명 단체지원 신청, 홍보인증 스크린샷 접수 및 기타 모든 서버 문의는 운영자 개인 텔레그램으로 언제든 연락주세요.
           </p>
+
+          <div className="mt-4 max-w-xl mx-auto p-4 rounded-xl bg-sky-50 border-2 border-sky-300 text-sky-950 text-sm sm:text-base font-extrabold shadow-sm leading-relaxed">
+            💬 문제, 버그, 개선사항이 있으신 경우 부담없이 텔레그램으로 말씀해주시면 최대한 소통하겠습니다.
+          </div>
 
           <div className="max-w-md mx-auto mt-10" id="community-links-grid">
             {[
