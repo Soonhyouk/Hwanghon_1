@@ -294,7 +294,7 @@ const HUNTING_ZONES: HuntingZone[] = [
 const DOWNLOAD_LINKS = [
   {
     label: "클라이언트 종합 다운로드 (구글 드라이브)",
-    url: "https://drive.google.com/file/d/12sGhUPQv73x_tsLoMAPBLSxOz2NB0pLo/view?usp=drive_link",
+    url: "https://drive.google.com/file/d/100LOml-lIVLI_U-HAWc9cGLEamhjf8nZ/view",
     size: "2.3 GB",
     primary: true,
     speed: "초고속 구글 드라이브",
@@ -504,8 +504,8 @@ export default function App() {
               style={{ background: "linear-gradient(135deg, #ffe082, #f5be38, #d49818)" }}
               id="header-dl-btn"
             >
-              <Calendar size={15} />
-              9월 10일 다운로드가능
+              <Download size={15} />
+              클라이언트 다운로드
             </a>
 
             <button
@@ -618,8 +618,8 @@ export default function App() {
               className="flex items-center justify-center gap-2.5 px-6 py-3.5 font-black text-sm sm:text-base rounded-xl bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] text-[#1e1302] hover:brightness-105 transition-all shadow-lg shadow-amber-500/20 active:scale-95 border-2 border-amber-400"
               id="hero-download-action"
             >
-              <Calendar size={18} />
-              9월 10일 다운로드가능
+              <Download size={18} />
+              클라이언트 다운로드
             </a>
             <a
               href="#classes"
@@ -1076,42 +1076,53 @@ export default function App() {
             </h2>
             <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
             <p className="text-[#20182c] text-sm sm:text-base mt-3 font-bold max-w-xl mx-auto">
-              현재 클라이언트 최종 안정화 점검 및 패치 패키징을 진행하고 있습니다. 
-              9월 10일 공식 다운로드 링크가 오픈되며, 9월 11일 정식 오픈(19시 오대기, 20시 오픈) 전 미리 설치하실 수 있습니다.
+              황혼서버 클라이언트 통합팩을 아래 링크를 통해 바로 다운로드하실 수 있습니다. 
+              9월 11일 정식 오픈(19시 오대기, 20시 오픈) 전 미리 설치해 두세요!
             </p>
             <div className="mt-4 inline-flex items-center gap-2.5 bg-amber-100 border-2 border-amber-400 rounded-xl px-6 py-3 text-sm sm:text-base text-amber-950 font-black shadow-sm">
-              <Calendar size={20} className="shrink-0 text-amber-800" />
-              <span>9월 10일 다운로드가능 (9월 11일 정식 오픈! 19시 오대기 20시 오픈)</span>
+              <Download size={20} className="shrink-0 text-amber-800" />
+              <span>클라이언트 다운로드 가능 (9월 11일 19시 오대기 / 20시 정식 오픈)</span>
             </div>
           </div>
 
-          <div className="mb-10" id="download-actions-list">
-            <div className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-6 sm:p-8 rounded-2xl border-2 border-amber-300 bg-white text-left relative overflow-hidden shadow-md shadow-amber-900/5 gap-6">
-              <div className="flex items-center gap-4 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center shrink-0 text-amber-900 shadow-xs">
-                  <Calendar size={28} />
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-black text-lg sm:text-xl text-[#110e17]">
-                      황혼서버 클라이언트 배포 예정
-                    </span>
-                    <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-amber-200 text-amber-950 border border-amber-400">
-                      오픈 예정
-                    </span>
+          <div className="mb-10 space-y-4" id="download-actions-list">
+            {DOWNLOAD_LINKS.map((link, idx) => (
+              <div
+                key={idx}
+                className="w-full flex flex-col sm:flex-row sm:items-center justify-between p-6 sm:p-8 rounded-2xl border-2 border-amber-300 bg-white text-left relative overflow-hidden shadow-md shadow-amber-900/5 gap-6 hover:border-amber-400 transition-all"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-300 flex items-center justify-center shrink-0 text-amber-900 shadow-xs">
+                    <Download size={28} />
                   </div>
-                  <p className="text-sm text-[#20182c] font-bold mt-1">
-                    9월 10일에 초고속 구글 드라이브 다운로드 링크가 공개됩니다.
-                  </p>
+                  <div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-black text-lg sm:text-xl text-[#110e17]">
+                        {link.label}
+                      </span>
+                      <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-950 border border-emerald-300">
+                        {link.availability}
+                      </span>
+                    </div>
+                    <p className="text-sm text-[#20182c] font-bold mt-1">
+                      {link.speed} • 파일 용량: {link.size}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 relative z-10 shrink-0">
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-black text-sm sm:text-base text-[#1e1302] bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] border-2 border-amber-400 shadow-md shadow-amber-500/20 hover:brightness-105 active:scale-95 transition-all"
+                  >
+                    <Download size={18} />
+                    다운로드 받기
+                    <ExternalLink size={15} className="opacity-70" />
+                  </a>
                 </div>
               </div>
-              <div className="flex items-center gap-3 relative z-10 shrink-0">
-                <div className="text-center sm:text-right px-6 py-3 rounded-xl bg-gradient-to-r from-amber-100 via-yellow-100 to-amber-100 border-2 border-amber-400 shadow-xs">
-                  <p className="text-xs font-mono font-black text-amber-900 uppercase">Release Schedule</p>
-                  <p className="text-base sm:text-lg font-black text-amber-950">9월 10일 다운로드가능</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Step Instructions */}
