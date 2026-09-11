@@ -296,7 +296,7 @@ const HUNTING_ZONES: HuntingZone[] = [
 const DOWNLOAD_LINKS = [
   {
     label: "클라이언트 종합 다운로드",
-    url: "https://file.kiwi/5fe30632#d6i2T7dvhlC0xtDIVuDxew",
+    url: "https://file.kiwi/d0df30a9#-Wf_x5udQLRcjJJG5QsfQQ",
     size: "2.3 GB",
     primary: true,
     speed: "초고속 클라우드 다운로드",
