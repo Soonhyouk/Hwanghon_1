@@ -20,6 +20,7 @@ import {
   Info,
   Calendar,
   Sparkles,
+  Clock,
   Volume2,
   Send,
   Coins,
@@ -296,11 +297,10 @@ const HUNTING_ZONES: HuntingZone[] = [
 const DOWNLOAD_LINKS = [
   {
     label: "클라이언트 종합 다운로드",
-    url: "https://file.kiwi/d0df30a9#-Wf_x5udQLRcjJJG5QsfQQ",
     size: "2.3 GB",
     primary: true,
-    speed: "초고속 클라우드 다운로드",
-    availability: "즉시 다운로드 가능"
+    speed: "초고속 클라우드 다운로드 (오픈 시 제공)",
+    availability: "10월 2일 오픈예정"
   },
 ];
 
@@ -308,15 +308,15 @@ const SERVER_STATS = [
   { label: "경험치 배율", value: "x10", sub: "EXP RATE", desc: "안정적인 성장 밸런스" },
   { label: "아이템 드랍", value: "x1", sub: "DROP RATE", desc: "득템의 손맛과 가치 보존" },
   { label: "아데나 배율", value: "x1", sub: "GOLD RATE", desc: "탄탄하고 공정한 경제" },
-  { label: "서버 시즌", value: "하자\nSeason 1", sub: "SEASON 1", desc: "" },
+  { label: "서버 시즌", value: "Season 2", sub: "SEASON 2", desc: "" },
 ];
 
 const NOTICES: Notice[] = [
   {
-    date: "2026.09.11",
+    date: "2026.10.02",
     tag: "공지",
-    title: "황혼서버 9월 11일(금) 정식 오픈 안내 (19시 오대기 / 20시 오픈)",
-    content: "9월 11일 정식 오픈! 19시 오대기 20시 오픈!!!\n\n혈원 10명 달성 시 단체지원(6검4셋+인형주머니) 등 풍성한 혜택이 준비되어 있습니다.\n문의 및 단체지원 신청은 운영자 개인 텔레그램(@Twilighthwanghon)으로 연락 부탁드립니다."
+    title: "황혼서버 10월 2일(금) 정식 오픈 안내 (19시 오대기 / 20시 오픈)",
+    content: "10월 2일 정식 오픈! 19시 오대기 20시 오픈!!!\n\n문의 사항은 운영자 개인 텔레그램(@Twilighthwanghon)으로 연락 부탁드립니다."
   },
 ];
 
@@ -372,11 +372,10 @@ export default function App() {
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text
-  const promoText = `2.0하자 황혼서버 9월 11일 정식 오픈! 19시 오대기 20시 오픈!!!
+  const promoText = `2.0하자 황혼서버 10월 2일 정식 오픈! 19시 오대기 20시 오픈!!!
 
 
  ** 중요** 빡센 농사꾼이 될 자신이 없다면 오지마세요
- 혈원 10명 채울 경우 단체지원(6검4셋+인형주머니)
 
  빛과 어둠이 교차하는 순간, 진짜 전투가 시작된다.
 
@@ -566,7 +565,7 @@ export default function App() {
             className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border-2 border-amber-400/90 bg-gradient-to-r from-amber-100 via-yellow-50 to-amber-100 text-sm sm:text-base font-extrabold text-amber-950 mb-6 shadow-md shadow-amber-500/15 backdrop-blur-sm"
           >
             <Sparkles size={18} className="text-amber-600 animate-spin shrink-0" style={{ animationDuration: '8s' }} />
-            <span className="font-mono tracking-wide">9월 11일 정식 오픈! 19시 오대기 20시 오픈!!!</span>
+            <span className="font-mono tracking-wide">10월 2일 정식 오픈! 19시 오대기 20시 오픈!!!</span>
           </motion.div>
 
           <motion.h1
@@ -599,14 +598,6 @@ export default function App() {
                 🚨 <span className="text-rose-900 font-black">** 중요**</span> 빡센 농사꾼이 될 자신이 없다면 오지마세요
               </p>
             </div>
-
-            {/* Group Support 10 Members Banner */}
-            <div>
-              <div className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-100 via-yellow-100 to-amber-100 border-2 border-amber-400 text-amber-950 text-sm sm:text-base font-black tracking-wide shadow-md shadow-amber-900/10">
-                <span className="text-lg">👑</span>
-                <span>혈원 <span className="text-amber-800 font-black underline decoration-amber-500 decoration-2 underline-offset-2">10명</span> 채울 경우 <span className="text-amber-900 font-black">단체지원 (6검4셋 + 인형주머니)</span></span>
-              </div>
-            </div>
           </motion.div>
 
           {/* Action Buttons */}
@@ -621,8 +612,8 @@ export default function App() {
               className="flex items-center justify-center gap-2.5 px-6 py-3.5 font-black text-sm sm:text-base rounded-xl bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] text-[#1e1302] hover:brightness-105 transition-all shadow-lg shadow-amber-500/20 active:scale-95 border-2 border-amber-400"
               id="hero-download-action"
             >
-              <Download size={18} />
-              클라이언트 다운로드
+              <Clock size={18} className="text-amber-900" />
+              클라이언트 10월 2일 오픈예정
             </a>
             <a
               href="#classes"
@@ -652,7 +643,7 @@ export default function App() {
                 <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
                 <p className="text-[11px] font-mono tracking-widest text-amber-900 uppercase mb-0.5 font-black">{stat.sub}</p>
                 <p
-                  className="text-2xl sm:text-3xl font-black text-[#110e17] my-1 tracking-tight whitespace-pre-line leading-tight flex items-center justify-center min-h-[36px]"
+                  className="text-xl sm:text-2xl lg:text-3xl font-black text-[#110e17] my-1 tracking-tight whitespace-nowrap leading-tight flex items-center justify-center min-h-[36px]"
                   style={{ fontFamily: "'Cinzel', serif" }}
                 >
                   {stat.value}
@@ -1079,12 +1070,12 @@ export default function App() {
             </h2>
             <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
             <p className="text-[#20182c] text-sm sm:text-base mt-3 font-bold max-w-xl mx-auto">
-              황혼서버 클라이언트 통합팩을 아래 링크를 통해 바로 다운로드하실 수 있습니다. 
-              9월 11일 정식 오픈(19시 오대기, 20시 오픈) 전 미리 설치해 두세요!
+              황혼서버 클라이언트 다운로드는 10월 2일 오픈 예정입니다.
+              10월 2일 정식 오픈(19시 오대기 / 20시 오픈) 전 다운로드 링크가 안내될 예정입니다.
             </p>
             <div className="mt-4 inline-flex items-center gap-2.5 bg-amber-100 border-2 border-amber-400 rounded-xl px-6 py-3 text-sm sm:text-base text-amber-950 font-black shadow-sm">
-              <Download size={20} className="shrink-0 text-amber-800" />
-              <span>클라이언트 다운로드 가능 (9월 11일 19시 오대기 / 20시 정식 오픈)</span>
+              <Clock size={20} className="shrink-0 text-amber-800" />
+              <span>10월 2일 오픈예정 (19시 오대기 / 20시 정식 오픈)</span>
             </div>
           </div>
 
@@ -1103,7 +1094,7 @@ export default function App() {
                         <span className="font-black text-lg sm:text-xl text-[#110e17]">
                           {link.label}
                         </span>
-                        <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-950 border border-emerald-300">
+                        <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-950 border border-amber-300">
                           {link.availability}
                         </span>
                       </div>
@@ -1113,16 +1104,12 @@ export default function App() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3 relative z-10 shrink-0">
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-black text-sm sm:text-base text-[#1e1302] bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] border-2 border-amber-400 shadow-md shadow-amber-500/20 hover:brightness-105 active:scale-95 transition-all"
+                    <div
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-black text-sm sm:text-base text-amber-950 bg-gradient-to-r from-amber-200 via-amber-300 to-amber-200 border-2 border-amber-400 shadow-sm select-none"
                     >
-                      <Download size={18} />
-                      다운로드 받기
-                      <ExternalLink size={15} className="opacity-70" />
-                    </a>
+                      <Clock size={18} className="text-amber-900" />
+                      10월 2일 오픈예정
+                    </div>
                   </div>
                 </div>
 
@@ -1138,7 +1125,7 @@ export default function App() {
                   </div>
                   <p className="mt-3.5 text-sm sm:text-base font-black text-amber-950 flex items-center justify-center gap-2">
                     <span className="text-rose-600 font-black">💡</span>
-                    <span>화면 오른쪽의 이 아이콘을 클릭하시면 다운로드가 진행됩니다.</span>
+                    <span>10월 2일 오픈 시, 화면 오른쪽의 이 아이콘을 클릭하시면 다운로드가 진행됩니다.</span>
                   </p>
                 </div>
               </div>
@@ -1194,7 +1181,7 @@ export default function App() {
           </h2>
           <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
           <p className="text-[#20182c] text-sm sm:text-base mt-3 max-w-xl mx-auto font-bold">
-            혈원 10명 단체지원 신청, 홍보인증 스크린샷 접수 및 기타 모든 서버 문의는 운영자 개인 텔레그램으로 언제든 연락주세요.
+            홍보인증 스크린샷 접수 및 기타 모든 서버 문의는 운영자 개인 텔레그램으로 언제든 연락주세요.
           </p>
 
           <div className="mt-4 max-w-xl mx-auto p-4 rounded-xl bg-sky-50 border-2 border-sky-300 text-sky-950 text-sm sm:text-base font-extrabold shadow-sm leading-relaxed">
@@ -1205,7 +1192,7 @@ export default function App() {
             {[
               {
                 label: "운영자 개인 텔레그램 바로가기",
-                sub: "@Twilighthwanghon (단체지원 / 문의 / 홍보인증)",
+                sub: "@Twilighthwanghon (문의 / 홍보인증)",
                 icon: <Send size={28} />,
                 color: "hover:border-sky-400 hover:shadow-xl",
                 bg: "bg-white",
