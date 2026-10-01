@@ -297,10 +297,11 @@ const HUNTING_ZONES: HuntingZone[] = [
 const DOWNLOAD_LINKS = [
   {
     label: "클라이언트 종합 다운로드",
+    url: "https://filekiwi.download/d0df30a9#-Wf_x5udQLRcjJJG5QsfQQ",
     size: "2.3 GB",
     primary: true,
-    speed: "초고속 클라우드 다운로드 (오픈 시 제공)",
-    availability: "10월 2일 오픈예정"
+    speed: "초고속 클라우드 다운로드",
+    availability: "다운로드 가능"
   },
 ];
 
@@ -612,8 +613,8 @@ export default function App() {
               className="flex items-center justify-center gap-2.5 px-6 py-3.5 font-black text-sm sm:text-base rounded-xl bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] text-[#1e1302] hover:brightness-105 transition-all shadow-lg shadow-amber-500/20 active:scale-95 border-2 border-amber-400"
               id="hero-download-action"
             >
-              <Clock size={18} className="text-amber-900" />
-              클라이언트 10월 2일 오픈예정
+              <Download size={18} className="text-amber-900" />
+              클라이언트 다운로드 받기
             </a>
             <a
               href="#classes"
@@ -1064,18 +1065,18 @@ export default function App() {
       <section id="download" className="py-24 border-y border-amber-200/70 bg-[#f7f4eb] relative z-10" md-id="download-section">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-xs tracking-widest text-amber-800 font-mono uppercase mb-2 font-black">Client Download Schedule</p>
+            <p className="text-xs tracking-widest text-amber-800 font-mono uppercase mb-2 font-black">Client Download</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-              클라이언트 다운로드 안내
+              클라이언트 다운로드
             </h2>
             <div className="mt-3 mx-auto w-24 h-1 bg-gradient-to-r from-transparent via-[#dca326] to-transparent" />
             <p className="text-[#20182c] text-sm sm:text-base mt-3 font-bold max-w-xl mx-auto">
-              황혼서버 클라이언트 다운로드는 10월 2일 오픈 예정입니다.
-              10월 2일 정식 오픈(19시 오대기 / 20시 오픈) 전 다운로드 링크가 안내될 예정입니다.
+              황혼서버 클라이언트를 다운로드하고 모험을 준비하세요.
+              10월 2일 정식 오픈(19시 오대기 / 20시 오픈) 전에 미리 설치를 권장합니다.
             </p>
             <div className="mt-4 inline-flex items-center gap-2.5 bg-amber-100 border-2 border-amber-400 rounded-xl px-6 py-3 text-sm sm:text-base text-amber-950 font-black shadow-sm">
-              <Clock size={20} className="shrink-0 text-amber-800" />
-              <span>10월 2일 오픈예정 (19시 오대기 / 20시 정식 오픈)</span>
+              <Download size={20} className="shrink-0 text-amber-800" />
+              <span>클라이언트 다운로드 링크 제공 중 (10월 2일 19시 오대기 / 20시 정식 오픈)</span>
             </div>
           </div>
 
@@ -1094,7 +1095,7 @@ export default function App() {
                         <span className="font-black text-lg sm:text-xl text-[#110e17]">
                           {link.label}
                         </span>
-                        <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-950 border border-amber-300">
+                        <span className="text-xs font-black px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-950 border border-emerald-300">
                           {link.availability}
                         </span>
                       </div>
@@ -1104,12 +1105,16 @@ export default function App() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3 relative z-10 shrink-0">
-                    <div
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-black text-sm sm:text-base text-amber-950 bg-gradient-to-r from-amber-200 via-amber-300 to-amber-200 border-2 border-amber-400 shadow-sm select-none"
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-black text-sm sm:text-base text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-300 hover:from-amber-400 hover:to-amber-500 border-2 border-amber-500 shadow-md hover:shadow-lg active:scale-95 transition-all"
                     >
-                      <Clock size={18} className="text-amber-900" />
-                      10월 2일 오픈예정
-                    </div>
+                      <Download size={18} className="text-amber-950" />
+                      다운로드 받기
+                      <ExternalLink size={15} className="opacity-80" />
+                    </a>
                   </div>
                 </div>
 
@@ -1125,7 +1130,7 @@ export default function App() {
                   </div>
                   <p className="mt-3.5 text-sm sm:text-base font-black text-amber-950 flex items-center justify-center gap-2">
                     <span className="text-rose-600 font-black">💡</span>
-                    <span>10월 2일 오픈 시, 화면 오른쪽의 이 아이콘을 클릭하시면 다운로드가 진행됩니다.</span>
+                    <span>다운로드 페이지 접속 후, 화면 오른쪽의 위 아이콘을 클릭하시면 다운로드가 진행됩니다.</span>
                   </p>
                 </div>
               </div>
