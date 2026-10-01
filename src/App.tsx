@@ -321,10 +321,38 @@ const NOTICES: Notice[] = [
   },
 ];
 
+const PROMO_SITES = [
+  {
+    id: 1,
+    name: "린프리",
+    url: "https://linfree.net/",
+    desc: "리니지 프리서버 정보 및 홍보 커뮤니티"
+  },
+  {
+    id: 2,
+    name: "투데이프리",
+    url: "https://today-free.com/",
+    desc: "서버 홍보 및 자유게시판"
+  },
+  {
+    id: 3,
+    name: "오락실",
+    url: "https://oraksil.cc/",
+    desc: "온라인 게임 커뮤니티 및 홍보 게시판"
+  },
+  {
+    id: 4,
+    name: "투데이팝 자유게시판",
+    url: "https://todaypop.net/freeboard",
+    desc: "투데이팝 자유게시판 및 홍보"
+  }
+];
+
 export default function App() {
   const [activeSection, setActiveSection] = useState("intro");
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [copiedUrlIndex, setCopiedUrlIndex] = useState<number | null>(null);
   
   // Character class tab state
   const [selectedClassTab, setSelectedClassTab] = useState<"prince" | "knight" | "elf" | "mage">("prince");
@@ -421,6 +449,12 @@ export default function App() {
     navigator.clipboard.writeText(promoText);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleCopyUrl = (url: string, index: number) => {
+    navigator.clipboard.writeText(url);
+    setCopiedUrlIndex(index);
+    setTimeout(() => setCopiedUrlIndex(null), 2000);
   };
 
   const currentClass = CLASSES.find((c) => c.id === selectedClassTab) || CLASSES[0];
@@ -1276,6 +1310,83 @@ export default function App() {
           <p className="text-xs text-[#55466b] font-bold">
             * 복사 버튼 클릭 시 클립보드에 자동으로 복사되어 즉시 붙여넣을 수 있습니다.
           </p>
+
+          {/* ─── 홍보 사이트 예시 ─── */}
+          <div className="mt-12 pt-10 border-t-2 border-amber-200/80 text-left" id="promo-sites-example">
+            <div className="text-center mb-6">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-amber-200/80 border border-amber-400 text-amber-950 text-xs font-black mb-2 shadow-xs">
+                📢 홍보 등록 추천
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-[#110e17]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                홍보 사이트 예시
+              </h3>
+              <p className="text-xs sm:text-sm text-[#342747] font-bold mt-1">
+                아래 예시 커뮤니티 사이트 등의 자유게시판/홍보게시판에 글을 남겨주시면 됩니다.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              {PROMO_SITES.map((site) => (
+                <div
+                  key={site.id}
+                  className="p-4 sm:p-5 rounded-2xl border-2 border-amber-200/90 bg-white hover:border-amber-400 transition-all shadow-md shadow-amber-900/5 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-1.5">
+                      <span className="w-7 h-7 rounded-xl bg-gradient-to-br from-amber-200 to-amber-300 border border-amber-400 text-amber-950 font-black text-sm flex items-center justify-center shrink-0 shadow-xs">
+                        {site.id}
+                      </span>
+                      <h4 className="font-black text-base text-[#110e17]">{site.name}</h4>
+                    </div>
+                    <p className="text-xs font-bold text-[#55466b] mb-2">{site.desc}</p>
+                    <div className="bg-amber-50/70 border border-amber-200/80 rounded-lg px-3 py-1.5 font-mono text-xs text-amber-950 break-all select-all font-bold">
+                      {site.url}
+                    </div>
+                  </div>
+
+                  <div className="mt-4 pt-3 border-t border-amber-100 flex items-center gap-2">
+                    <a
+                      href={site.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-200 via-amber-300 to-amber-200 hover:from-amber-300 hover:to-amber-400 border border-amber-400 text-amber-950 font-black text-xs transition-all shadow-xs active:scale-95"
+                    >
+                      <span>사이트 바로가기</span>
+                      <ExternalLink size={13} className="text-amber-900" />
+                    </a>
+                    <button
+                      onClick={() => handleCopyUrl(site.url, site.id)}
+                      className="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-300 text-slate-800 font-black text-xs transition-colors shrink-0 active:scale-95 cursor-pointer"
+                    >
+                      {copiedUrlIndex === site.id ? (
+                        <>
+                          <Check size={13} className="text-emerald-600" />
+                          <span className="text-emerald-700">복사됨!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy size={13} className="text-slate-600" />
+                          <span>링크 복사</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* 등등등 (위의 사이트는 예시일 뿐입니다.) */}
+            <div className="mt-6 text-center max-w-2xl mx-auto">
+              <div className="p-4 rounded-2xl bg-amber-100/90 border-2 border-amber-300/90 text-amber-950 shadow-sm text-center">
+                <p className="text-sm sm:text-base font-black tracking-wide">
+                  등등등 <span className="font-bold text-amber-900">(위의 사이트는 예시일 뿐입니다.)</span>
+                </p>
+                <p className="text-xs font-bold text-amber-800/90 mt-1">
+                  * 상기 사이트 외 다른 리니지 프리서버 커뮤니티, 게임 포럼 및 자유게시판 홍보도 모두 동일하게 인정됩니다.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
