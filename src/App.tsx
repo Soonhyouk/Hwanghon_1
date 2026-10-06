@@ -401,7 +401,7 @@ export default function App() {
   }, [zoneSearch, zoneDiffFilter]);
 
   // Promo text
-  const promoText = `2.0하자 황혼서버 10월 2일 정식 오픈! 19시 오대기 20시 오픈!!!
+  const promoText = `2.0 반하자.지향 황혼서버 10월 2일 정식 오픈! 19시 오대기 20시 오픈!!!
 
 
  ** 중요** 빡센 농사꾼이 될 자신이 없다면 오지마세요
@@ -423,7 +423,7 @@ export default function App() {
  자동사냥 시스템 지원
 (손사냥이 더욱 높은 효율을 가질 수 있도록 설계)
 
- 장기 운영을 목표로 하는 반하자지향 서버
+ 장기 운영을 목표로 하는 반하자.지향 서버
 단기간에 모든 것을 얻기보다,
 하루하루 성장하며 장비를 맞춰가는 재미를 추구합니다.
 
@@ -610,7 +610,7 @@ export default function App() {
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.25] mb-6 text-[#110e17]"
             style={{ fontFamily: "'Noto Serif KR', serif" }}
           >
-            황혼서버 하자 지향,<br />
+            황혼서버 반하자.지향,<br />
             <span className="bg-gradient-to-r from-[#9b6805] via-[#d49611] to-[#a36f07] bg-clip-text text-transparent drop-shadow-xs font-black">
               노력과 시간이 미래를 바꾼다.
             </span>
