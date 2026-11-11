@@ -233,7 +233,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     name: "기란던전 1층",
     level: "45 ~",
     difficulty: "중",
-    desc: "스탯부츠, 무기/인형옵션부여주문서",
+    desc: "",
     color: "text-amber-300",
     border: "border-amber-500/30 hover:border-amber-400/60",
     bgGlow: "rgba(245,158,11,0.06)"
@@ -242,7 +242,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     name: "기란던전 2층",
     level: "48 ~",
     difficulty: "중",
-    desc: "금날/은날",
+    desc: "",
     color: "text-amber-300",
     border: "border-amber-500/30 hover:border-amber-400/60",
     bgGlow: "rgba(245,158,11,0.06)"
@@ -251,7 +251,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     name: "기란던전 3층",
     level: "50 ~",
     difficulty: "중상",
-    desc: "축오림무기/갑옷주문서",
+    desc: "",
     color: "text-orange-300",
     border: "border-orange-500/30 hover:border-orange-400/60",
     bgGlow: "rgba(249,115,22,0.06)"
@@ -260,7 +260,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     name: "기란던전 4층",
     level: "52 ~",
     difficulty: "상",
-    desc: "2차무기(진싸울아비대검, 진레이피어, 강마나, 달의장궁)",
+    desc: "",
     color: "text-rose-300",
     border: "border-rose-500/30 hover:border-rose-400/60",
     bgGlow: "rgba(244,63,94,0.06)"
@@ -269,7 +269,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     name: "잊혀진섬",
     level: "45 ~",
     difficulty: "중상",
-    desc: "실프의 티셔츠, 고대의주문서",
+    desc: "",
     color: "text-orange-300",
     border: "border-orange-500/30 hover:border-orange-400/60",
     bgGlow: "rgba(249,115,22,0.06)"
@@ -287,7 +287,7 @@ const HUNTING_ZONES: HuntingZone[] = [
     name: "테베라스 던전",
     level: "52 ~",
     difficulty: "상",
-    desc: "시간던전, 테베상자 노가다 던전",
+    desc: "시간던전",
     color: "text-purple-300",
     border: "border-purple-500/30 hover:border-purple-400/60",
     bgGlow: "rgba(168,85,247,0.06)"
@@ -306,10 +306,11 @@ interface DownloadItem {
 const DOWNLOAD_LINKS: DownloadItem[] = [
   {
     label: "클라이언트 종합 다운로드",
+    url: "https://file.kiwi/ca009e58#g1A8guSiWTnyVTBziTaPQQ",
     size: "2.3 GB",
     primary: true,
-    speed: "초고속 클라우드 다운로드 (업로드 예정)",
-    availability: "11월 12일 업로드 예정"
+    speed: "초고속 클라우드 다운로드 (FileKiwi)",
+    availability: "다운로드 가능"
   },
 ];
 
@@ -402,7 +403,7 @@ export default function App() {
   const filteredZones = useMemo(() => {
     return HUNTING_ZONES.filter((z) => {
       const matchesSearch = z.name.toLowerCase().includes(zoneSearch.toLowerCase()) || 
-                            z.desc.toLowerCase().includes(zoneSearch.toLowerCase());
+                            (z.desc ? z.desc.toLowerCase().includes(zoneSearch.toLowerCase()) : false);
       const matchesDiff = zoneDiffFilter === "전체" || z.difficulty === zoneDiffFilter;
       return matchesSearch && matchesDiff;
     });
@@ -650,12 +651,14 @@ export default function App() {
             className="flex flex-col sm:flex-row justify-center gap-3.5 mb-10"
           >
             <a
-              href="#download"
+              href="https://file.kiwi/ca009e58#g1A8guSiWTnyVTBziTaPQQ"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2.5 px-6 py-3.5 font-black text-sm sm:text-base rounded-xl bg-gradient-to-r from-[#ffe082] via-[#f5be38] to-[#d49818] text-[#1e1302] hover:brightness-105 transition-all shadow-lg shadow-amber-500/20 active:scale-95 border-2 border-amber-400"
               id="hero-download-action"
             >
               <Download size={18} className="text-amber-900" />
-              클라이언트 다운로드 (11월 12일 업로드 예정)
+              클라이언트 다운로드 받기
             </a>
             <a
               href="#classes"
@@ -1083,9 +1086,11 @@ export default function App() {
                         </span>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-[#20182c] leading-relaxed font-bold">
-                        {zone.desc}
-                      </p>
+                      {zone.desc ? (
+                        <p className="text-xs sm:text-sm text-[#20182c] leading-relaxed font-bold">
+                          {zone.desc}
+                        </p>
+                      ) : null}
                     </div>
                   </motion.div>
                 );
@@ -1116,8 +1121,8 @@ export default function App() {
               11월 13일 시즌3 정식 오픈(18시 오대기 / 19시 오픈) 전에 미리 설치를 권장합니다.
             </p>
             <div className="mt-4 inline-flex items-center gap-2.5 bg-amber-100 border-2 border-amber-400 rounded-xl px-6 py-3 text-sm sm:text-base text-amber-950 font-black shadow-sm">
-              <Clock size={20} className="shrink-0 text-amber-800" />
-              <span>클라이언트 다운로드: 11월 12일 업로드 예정 (11월 13일 시즌3 18시 오대기 / 19시 오픈)</span>
+              <Download size={20} className="shrink-0 text-amber-800" />
+              <span>클라이언트 다운로드 시작 (11월 13일 시즌3 18시 오대기 / 19시 오픈)</span>
             </div>
           </div>
 
@@ -1178,7 +1183,7 @@ export default function App() {
                   </div>
                   <p className="mt-3.5 text-sm sm:text-base font-black text-amber-950 flex items-center justify-center gap-2">
                     <span className="text-rose-600 font-black">💡</span>
-                    <span>클라이언트 다운로드 링크는 11월 12일에 업로드됩니다. 오픈(11월 13일 19시) 전에 미리 다운로드하여 설치해 주세요.</span>
+                    <span>위 다운로드 링크(FileKiwi)를 통해 클라이언트(2.3 GB)를 다운로드하신 후 오픈 전에 미리 설치해 주세요.</span>
                   </p>
                 </div>
               </div>
